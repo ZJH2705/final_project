@@ -1,0 +1,13 @@
+Panel
+VBoxContainer
+TextureRect
+CenterContainer
+Button
+Control
+CollisionShape2D
+AnimatedSprite2D
+Area2D
+Timer
+TileMapLayer
+Camera2D
+CharacterBody2D

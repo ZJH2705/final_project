@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://dltu3runi274s"]
+
+[ext_resource type="Script" uid="uid://cevvpj8sgxtvy" path="res://scene/script/character.gd" id="1_uf5qm"]
+[ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="1_x0r3k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnn1m"]
+atlas = ExtResource("1_x0r3k")
+region = Rect2(0, 0, 113, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf5qm"]
+atlas = ExtResource("1_x0r3k")
+region = Rect2(0, 0, 113, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uprx"]
+atlas = ExtResource("1_x0r3k")
+region = Rect2(113, 0, 113, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw3xd"]
+atlas = ExtResource("1_x0r3k")
+region = Rect2(226, 0, 113, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqgh0"]
+atlas = ExtResource("1_x0r3k")
+region = Rect2(339, 0, 113, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oumao"]
+atlas = ExtResource("1_x0r3k")
+region = Rect2(452, 0, 113, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jnn1m"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnn1m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf5qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uprx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw3xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqgh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oumao")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8rrn"]
+size = Vector2(12.5, 30)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_uf5qm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.85027, 20.8933)
+scale = Vector2(0.245138, 0.191067)
+sprite_frames = SubResource("SpriteFrames_jnn1m")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 21)
+shape = SubResource("RectangleShape2D_k8rrn")

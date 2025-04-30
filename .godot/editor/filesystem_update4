@@ -1,0 +1,7 @@
+res://scene/game.tscn
+res://scene/player.tscn
+res://scene/coin.tscn
+res://scene/kill_zone.tscn
+res://scene/coin_dead.tscn
+res://scene/character.tscn
+res://scene/main_menu.tscn

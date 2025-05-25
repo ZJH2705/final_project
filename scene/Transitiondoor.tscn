@@ -1,0 +1,94 @@
+[gd_scene load_steps=12 format=3 uid="uid://btxobaq142ak5"]
+
+[ext_resource type="Texture2D" uid="uid://802kgfjlkuc5" path="res://assets/門-20250430T034938Z-1-001/門/movingdoor10.png" id="1_vwl7r"]
+[ext_resource type="Texture2D" uid="uid://bf4t6wm2tk1wl" path="res://assets/門-20250430T034938Z-1-001/門/movingdoor9.png" id="2_n7q7s"]
+[ext_resource type="Texture2D" uid="uid://cax7dkbhqc84i" path="res://assets/門-20250430T034938Z-1-001/門/movingdoor8.png" id="3_cjdkn"]
+[ext_resource type="Texture2D" uid="uid://bxqc1c0h2ygve" path="res://assets/門-20250430T034938Z-1-001/門/movingdoor7.png" id="4_kohye"]
+[ext_resource type="Texture2D" uid="uid://dg1kb4utfop20" path="res://assets/門-20250430T034938Z-1-001/門/movingdoor6.png" id="5_wcjcl"]
+[ext_resource type="Texture2D" uid="uid://c6oehqy3b8d7d" path="res://assets/門-20250430T034938Z-1-001/門/movingdoor5.png" id="6_s5uo3"]
+[ext_resource type="Texture2D" uid="uid://ly8ylasrcwkw" path="res://assets/門-20250430T034938Z-1-001/門/movingdoor4.png" id="7_fp37i"]
+[ext_resource type="Texture2D" uid="uid://t66rx7x373ms" path="res://assets/門-20250430T034938Z-1-001/門/movingdoor3.png" id="8_7w3go"]
+[ext_resource type="Texture2D" uid="uid://duqil0xjvcwxd" path="res://assets/門-20250430T034938Z-1-001/門/movingdoor2.png" id="9_3csmo"]
+[ext_resource type="Texture2D" uid="uid://5usc1l3vy2w6" path="res://assets/門-20250430T034938Z-1-001/門/movingdoor1.png" id="10_5ct8l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tbchc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vwl7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n7q7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cjdkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kohye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wcjcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s5uo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fp37i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7w3go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3csmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5ct8l")
+}],
+"loop": false,
+"name": &"doorclose",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_5ct8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3csmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7w3go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7w3go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fp37i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s5uo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wcjcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kohye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cjdkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n7q7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vwl7r")
+}],
+"loop": false,
+"name": &"dooropen",
+"speed": 10.0
+}]
+
+[node name="Transitiondoor" type="AnimatedSprite2D"]
+position = Vector2(-8, 0)
+scale = Vector2(0.3972, 0.3972)
+sprite_frames = SubResource("SpriteFrames_tbchc")
+animation = &"doorclose"

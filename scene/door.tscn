@@ -1,0 +1,74 @@
+[gd_scene load_steps=13 format=3 uid="uid://cm4mt5e2p7rdt"]
+
+[ext_resource type="Script" uid="uid://cyphu3u1fsbbp" path="res://scene/script/door.gd" id="1_0xipm"]
+[ext_resource type="Texture2D" uid="uid://djjb8laqe8sj" path="res://assets/門-20250430T034938Z-1-001/門/門.png" id="1_yer6t"]
+[ext_resource type="Texture2D" uid="uid://cmq42uf7o228e" path="res://assets/門-20250430T034938Z-1-001/門/門動畫1.png" id="3_krdiv"]
+[ext_resource type="Texture2D" uid="uid://fjdq0hmrh1k3" path="res://assets/門-20250430T034938Z-1-001/門/門動畫2.png" id="4_u1f7f"]
+[ext_resource type="Texture2D" uid="uid://cl1ebtnbe5wrx" path="res://assets/門-20250430T034938Z-1-001/門/門動畫3.png" id="5_jh4r8"]
+[ext_resource type="Texture2D" uid="uid://c1xw1wdlf1fro" path="res://assets/門-20250430T034938Z-1-001/門/門動畫4.png" id="6_x5gjj"]
+[ext_resource type="Texture2D" uid="uid://kia0ytr8y4n2" path="res://assets/門-20250430T034938Z-1-001/門/門動畫5.png" id="7_pefh2"]
+[ext_resource type="Texture2D" uid="uid://cfhwu8er7e8b" path="res://assets/門-20250430T034938Z-1-001/門/門動畫6.png" id="8_csi2u"]
+[ext_resource type="Texture2D" uid="uid://bitwxb3njqq3v" path="res://assets/門-20250430T034938Z-1-001/門/門動畫7.png" id="9_hket6"]
+[ext_resource type="Texture2D" uid="uid://diou1xe2dltj8" path="res://assets/門-20250430T034938Z-1-001/門/門動畫8.png" id="10_u1f7f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjuel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yer6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_krdiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u1f7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jh4r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x5gjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pefh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_csi2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hket6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u1f7f")
+}],
+"loop": false,
+"name": &"enter_door",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yer6t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qv1px"]
+size = Vector2(24, 30.5625)
+
+[node name="door" type="Area2D"]
+script = ExtResource("1_0xipm")
+
+[node name="EnterDoorSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.687499, 10.1875)
+scale = Vector2(0.0784375, 0.0809375)
+sprite_frames = SubResource("SpriteFrames_pjuel")
+animation = &"enter_door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10.2813)
+shape = SubResource("RectangleShape2D_qv1px")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="EnterDoorSprite" to="." method="_on_animated_sprite_2d_animation_finished"]

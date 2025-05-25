@@ -1,128 +1,69 @@
-[gd_scene load_steps=8 format=3 uid="uid://cd750p3xsrtwc"]
+[gd_scene load_steps=7 format=3 uid="uid://cd750p3xsrtwc"]
 
 [ext_resource type="Script" uid="uid://d28k1mtc7gj3k" path="res://scene/script/main_menu.gd" id="1_hxu56"]
 [ext_resource type="Texture2D" uid="uid://c6e0pxiqbvccy" path="res://assets/首頁-20250430T034940Z-1-001/首頁/主頁面背景圖.png" id="2_2fwvj"]
+[ext_resource type="Theme" uid="uid://bg7m5fkkhc1ph" path="res://default.tres" id="3_sepwh"]
+[ext_resource type="Theme" uid="uid://cgejia63hlo0l" path="res://default2.tres" id="4_14wem"]
+[ext_resource type="Theme" uid="uid://cyylokydfnyae" path="res://default3.tres" id="5_2atga"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0iwki"]
 texture = ExtResource("2_2fwvj")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sepwh"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14wem"]
-bg_color = Color(0.728822, 0.728822, 0.728822, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2atga"]
-bg_color = Color(0.529067, 0.529067, 0.529067, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_by01r"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 333.0
-offset_top = 205.0
-offset_right = -373.0
-offset_bottom = -168.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_hxu56")
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -356.5
-offset_top = -198.5
-offset_right = 356.5
-offset_bottom = 198.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.59102, 1.59102)
+script = ExtResource("1_hxu56")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -362.032
+offset_top = -203.643
+offset_right = 361.968
+offset_bottom = 204.357
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_0iwki")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -114.0
-offset_top = -161.0
-offset_right = 114.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 8
-
-[node name="PLAY" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(120, 50)
+[node name="PLAY" type="Button" parent="."]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
+offset_left = -235.069
+offset_top = -3.14263
+offset_right = -220.069
+offset_bottom = 26.8574
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sepwh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_14wem")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2atga")
-theme_override_styles/normal = SubResource("StyleBoxFlat_by01r")
-text = "PLAY"
+theme = ExtResource("3_sepwh")
 
-[node name="OPTION" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(120, 50)
+[node name="OPTION" type="Button" parent="."]
+custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
+offset_left = -282.0
+offset_top = 102.743
+offset_right = -256.0
+offset_bottom = 128.743
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sepwh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_14wem")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2atga")
-theme_override_styles/normal = SubResource("StyleBoxFlat_by01r")
-text = "OPTION"
+theme = ExtResource("4_14wem")
 
-[node name="EXIT" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(120, 50)
+[node name="EXIT" type="Button" parent="."]
+custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
+offset_left = -282.0
+offset_top = 138.0
+offset_right = -256.0
+offset_bottom = 164.0
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sepwh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_14wem")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2atga")
-theme_override_styles/normal = SubResource("StyleBoxFlat_by01r")
-text = "EXIT"
+theme = ExtResource("5_2atga")
 
-[connection signal="pressed" from="VBoxContainer/PLAY" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/OPTION" to="." method="_on_option_pressed"]
-[connection signal="pressed" from="VBoxContainer/EXIT" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="OPTION" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]

@@ -1,7 +1,79 @@
-[gd_scene load_steps=11 format=3 uid="uid://dltu3runi274s"]
+[gd_scene load_steps=15 format=3 uid="uid://iemv8nqnd71d"]
 
-[ext_resource type="Script" uid="uid://cevvpj8sgxtvy" path="res://scene/script/character.gd" id="1_uf5qm"]
+[ext_resource type="Texture2D" uid="uid://5e6ul6dxlylb" path="res://assets/死亡動畫-20250430T034935Z-1-001/死亡動畫/pixil-frame-0 (7).png" id="1_7v2w7"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="1_x0r3k"]
+[ext_resource type="Texture2D" uid="uid://6ydu2dj4eag7" path="res://assets/死亡動畫-20250430T034935Z-1-001/死亡動畫/pixil-frame-0 (8).png" id="2_p3t0x"]
+[ext_resource type="Texture2D" uid="uid://dtwes4n8tx32g" path="res://assets/死亡動畫-20250430T034935Z-1-001/死亡動畫/pixil-frame-0 (9).png" id="3_mbevu"]
+[ext_resource type="Texture2D" uid="uid://76uj7edsbdq5" path="res://assets/死亡動畫-20250430T034935Z-1-001/死亡動畫/nothing.png" id="5_p3t0x"]
+
+[sub_resource type="GDScript" id="GDScript_tlt3g"]
+script/source = "extends CharacterBody2D
+@onready var anim = $AnimatedSprite2D
+const SPEED = 300.0
+const JUMP_VELOCITY = -500.0
+const GRAVITY = 1200.0  
+var is_dead: bool = false
+var is_pass: bool = false
+func _ready():
+ var door = get_node_or_null(\"/root/YourScene/Door\")  # 改成實際門的路徑
+ if door:
+  door.connect(\"player_entered_door\", Callable(self, \"_on_player_entered_door\"))
+func _pass():
+ is_pass = true
+ anim.play(\"disappear\")
+ await anim.animation_finished
+func _on_death_animation_finished():
+	# 這裡可以添加重新載入場景或其他你想做的操作
+ print(\"死亡動畫播放完畢\")
+	# 如果你想重新載入場景，可以在這裡加上
+ get_tree().reload_current_scene()
+func die():
+	
+ if is_dead:
+  return
+ is_dead = true
+ velocity = Vector2.ZERO
+ anim.play(\"die\")
+ await anim.animation_finished
+ print(\"check\")
+ _on_death_animation_finished()  # 動畫結束後執行後續操作
+ return
+func _physics_process(delta: float) -> void:
+ # 加重力
+ if is_dead or is_pass:
+  return 
+ if not is_on_floor():
+  velocity.y += GRAVITY * delta
+
+ # 跳躍
+ if Input.is_action_just_pressed(\"ui_up\") and is_on_floor():
+  velocity.y = JUMP_VELOCITY
+ 
+ # 左右移動
+ var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+ if direction:
+  velocity.x = direction * SPEED
+ 
+ # <<< 左右翻轉角色
+  if direction < 0:
+   anim.flip_h = true  # 往左：水平翻轉
+  elif direction > 0:
+   anim.flip_h = false # 往右：正常
+ else:
+  velocity.x = move_toward(velocity.x, 0, SPEED)
+ 
+ move_and_slide()
+ if velocity.x == 0:
+  anim.play(\"idle\")  # 靜止時播放待機動畫
+  #print(\"check22\")
+ else:
+  anim.play(\"run\")   # 左右移動時播
+ #if is_dead:
+  #return
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8rrn"]
+size = Vector2(12.5, 25.5151)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnn1m"]
 atlas = ExtResource("1_x0r3k")
@@ -29,16 +101,36 @@ region = Rect2(452, 0, 113, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jnn1m"]
 animations = [{
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7v2w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p3t0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mbevu")
+}],
+"loop": false,
 "name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_p3t0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p3t0x")
+}],
+"loop": false,
+"name": &"disappear",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jnn1m")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -68,19 +160,17 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8rrn"]
-size = Vector2(12.5, 30)
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(1, 0)
-script = ExtResource("1_uf5qm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1.85027, 20.8933)
-scale = Vector2(0.245138, 0.191067)
-sprite_frames = SubResource("SpriteFrames_jnn1m")
-animation = &"idle"
+script = SubResource("GDScript_tlt3g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 21)
+position = Vector2(-310.25, 133.242)
 shape = SubResource("RectangleShape2D_k8rrn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-310, 133)
+scale = Vector2(0.212389, 0.165542)
+sprite_frames = SubResource("SpriteFrames_jnn1m")
+animation = &"die"
+frame = 1
+frame_progress = 1.0

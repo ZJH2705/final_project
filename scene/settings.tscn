@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://c67rds4gnrtcw"]
+
+[ext_resource type="Script" uid="uid://2j46h16150k7" path="res://scene/script/settings.gd" id="1_keur6"]
+[ext_resource type="Texture2D" uid="uid://d3m8mws8mc8mm" path="res://assets/設定頁面/setting bg.png" id="1_likc5"]
+[ext_resource type="Theme" uid="uid://si1c0i87wje7" path="res://setting.tres" id="2_ok4lx"]
+[ext_resource type="Theme" uid="uid://d4bbewam0k8ch" path="res://setting2.tres" id="3_uhf66"]
+[ext_resource type="Theme" uid="uid://dx4018jhw22kf" path="res://setting3.tres" id="4_ftovt"]
+[ext_resource type="Theme" uid="uid://dxb5qy3lhiwp2" path="res://setting4.tres" id="5_wyye3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ok4lx"]
+texture = ExtResource("1_likc5")
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_keur6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_keur6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ok4lx")
+metadata/_edit_use_anchors_ = true
+
+[node name="sound_on" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.409722
+anchor_top = 0.530864
+anchor_right = 0.520833
+anchor_bottom = 0.604938
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ok4lx")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_keur6")
+
+[node name="sound_off" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = 20.0
+offset_right = 192.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_uhf66")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_keur6")
+
+[node name="reset" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 102.0
+offset_right = 24.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_ftovt")
+
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.0
+offset_top = 226.0
+offset_right = -315.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_wyye3")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="toggled" from="sound_on" to="." method="_on_sound_on_toggled"]
+[connection signal="toggled" from="sound_off" to="." method="_on_sound_off_toggled"]
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

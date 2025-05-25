@@ -1,24 +1,39 @@
 extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
-const SPEED = 200.0
-const JUMP_VELOCITY = -300.0
+const SPEED = 300.0
+const JUMP_VELOCITY = -500.0
 const GRAVITY = 1200.0  
-var touching_door = false
-func _ready():
- var door = get_node_or_null("/root/YourScene/Door")  # 改成實際門的路徑
- if door:
-  door.connect("player_entered_door", Callable(self, "_on_player_entered_door"))
+var is_dead: bool = false
+var is_pass: bool = false
+#func _ready():
+ #var door = get_node_or_null("/root/YourScene/Door")  # 改成實際門的路徑
+ #if door:
+  #door.connect("player_entered_door", Callable(self, "_on_player_entered_door"))
+func _pass():
+ is_pass = true
+ anim.play("disappear")
+ await anim.animation_finished
+func _on_death_animation_finished():
+	# 這裡可以添加重新載入場景或其他你想做的操作
+ print("死亡動畫播放完畢")
+	# 如果你想重新載入場景，可以在這裡加上
+ get_tree().reload_current_scene()
 
-func _on_player_entered_door():
- print("Player touched the door!")
- touching_door = true
- # 例如：播放一個動畫或切換場景
- anim.play("enter_door")
- # 或執行場景切換
- # get_tree().change_scene_to_file("res://next_scene.tscn")
- 
+func die():
+	
+ if is_dead:
+  return
+ is_dead = true
+ velocity = Vector2.ZERO
+ anim.play("die")
+ await anim.animation_finished
+ print("check")
+ #_on_death_animation_finished()  # 動畫結束後執行後續操作
+ return
 func _physics_process(delta: float) -> void:
  # 加重力
+ if is_dead or is_pass:
+  return 
  if not is_on_floor():
   velocity.y += GRAVITY * delta
 
@@ -42,5 +57,8 @@ func _physics_process(delta: float) -> void:
  move_and_slide()
  if velocity.x == 0:
   anim.play("idle")  # 靜止時播放待機動畫
+  #print("check22")
  else:
-  anim.play("run")   # 左右移動時播放跑步動畫
+  anim.play("run")   # 左右移動時播
+ if is_dead:
+  return

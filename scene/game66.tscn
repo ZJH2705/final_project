@@ -1,5 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://ddlvcgujvpldi"]
 
+[ext_resource type="Script" uid="uid://bjs8tulum11jt" path="res://scene/script/game_3.gd" id="1_mn4cd"]
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="2_166l1"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="3_2gfun"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="4_vx8bg"]
@@ -9,27 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://847on4jke4qp" path="res://scene/kill_zone.tscn" id="8_aeovr"]
 [ext_resource type="PackedScene" uid="uid://cm4mt5e2p7rdt" path="res://scene/door.tscn" id="9_vntqe"]
 [ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="10_rgqja"]
-
-[sub_resource type="GDScript" id="GDScript_blreg"]
-script/source = "extends Node2D
-
-@onready var Door = get_node(\"door\")
-@onready var Transition = get_node(\"Transitiondoor\")
-
-
-
-func _ready() -> void:
-	print(\"開門\")
-	Transition.play(\"doorope\")
-	Door.connect(\"enter\" , Callable(self , \"_on_enter\"))
-	pass
-
-func _on_enter() -> void:
-	print(\"關門\")
-	Transition.play(\"doorclose\")
-	#轉場景
-	pass
-"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
 texture = ExtResource("2_166l1")
@@ -9860,7 +9840,7 @@ sources/1 = SubResource("TileSetAtlasSource_xlg7c")
 sources/4 = SubResource("TileSetAtlasSource_ll5lq")
 
 [node name="game" type="Node2D"]
-script = SubResource("GDScript_blreg")
+script = ExtResource("1_mn4cd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, 58)

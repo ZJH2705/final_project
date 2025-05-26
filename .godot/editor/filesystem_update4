@@ -13,3 +13,9 @@ res://scene/pause_menu.tscn
 res://scene/game_2.tscn
 res://scene/music_player.tscn
 res://scene/script/game.gd
+res://scene/game_4.tscn
+res://scene/script/game_2.gd
+res://scene/script/game_3.gd
+res://scene/script/game_4.gd
+res://scene/game66.tscn
+res://scene/game_3.tscn

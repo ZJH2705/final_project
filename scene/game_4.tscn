@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=4 uid="uid://cx782kx8gsnee"]
+[gd_scene load_steps=17 format=4 uid="uid://cx782kx8gsnee"]
 
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="1_6y2ld"]
+[ext_resource type="Script" uid="uid://gl2qkwldkmkd" path="res://scene/script/game_4.gd" id="1_xyaxd"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="2_xyaxd"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="3_kcvmm"]
-[ext_resource type="PackedScene" uid="uid://dltu3runi274s" path="res://scene/character.tscn" id="4_sepx6"]
-[ext_resource type="Script" uid="uid://vp7dup04i3ld" path="res://scene/tile_map_layer.gd" id="4_xyaxd"]
+[ext_resource type="PackedScene" uid="uid://dltu3runi274s" path="res://scene/character1.tscn" id="4_sepx6"]
+[ext_resource type="Script" uid="uid://cry82lccbbcsd" path="res://scene/script/tile_map_layer_1.gd" id="4_xyaxd"]
 [ext_resource type="PackedScene" uid="uid://847on4jke4qp" path="res://scene/kill_zone.tscn" id="7_hwk7s"]
 [ext_resource type="PackedScene" uid="uid://cm4mt5e2p7rdt" path="res://scene/door.tscn" id="8_p6mln"]
+[ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="9_xyaxd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
 texture = ExtResource("1_6y2ld")
@@ -9834,6 +9836,7 @@ sources/1 = SubResource("TileSetAtlasSource_xlg7c")
 size = Vector2(17, 24)
 
 [node name="game" type="Node2D"]
+script = ExtResource("1_xyaxd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, 58)
@@ -9853,13 +9856,13 @@ tile_set = SubResource("TileSet_1x5d1")
 script = ExtResource("4_xyaxd")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_sepx6")]
-position = Vector2(-357, -94)
+position = Vector2(-595, 50)
 
 [node name="kill zone" parent="." instance=ExtResource("7_hwk7s")]
 position = Vector2(-110, 304)
 
 [node name="door" parent="." instance=ExtResource("8_p6mln")]
-position = Vector2(437, 32)
+position = Vector2(432, 38)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-353, -94)
@@ -9874,6 +9877,11 @@ position = Vector2(67, -99)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(50, 162)
 shape = SubResource("RectangleShape2D_xyaxd")
+
+[node name="Transitiondoor" parent="." instance=ExtResource("9_xyaxd")]
+visible = false
+position = Vector2(-94.1, -199.125)
+scale = Vector2(0.6351, 0.5298)
 
 [connection signal="body_entered" from="Area2D" to="TileMapLayer2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="TileMapLayer2" method="_on_area_2d_body_entered"]

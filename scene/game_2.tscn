@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://5scmjn1mk8u3"]
+[gd_scene load_steps=19 format=4 uid="uid://5scmjn1mk8u3"]
 
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="1_5av1x"]
+[ext_resource type="Script" uid="uid://h6l6k6ilkhv" path="res://scene/script/game_2.gd" id="1_15p42"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="2_4onms"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="3_15p42"]
 [ext_resource type="PackedScene" uid="uid://dltu3runi274s" path="res://scene/character1.tscn" id="4_d4tkn"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://847on4jke4qp" path="res://scene/kill_zone.tscn" id="7_24os6"]
 [ext_resource type="PackedScene" uid="uid://cm4mt5e2p7rdt" path="res://scene/door.tscn" id="8_ihhsk"]
 [ext_resource type="PackedScene" uid="uid://c580sqtamtoor" path="res://scene/pause_menu.tscn" id="9_4onms"]
+[ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="11_d4tkn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
 texture = ExtResource("1_5av1x")
@@ -9836,6 +9838,7 @@ sources/1 = SubResource("TileSetAtlasSource_xlg7c")
 size = Vector2(17, 24)
 
 [node name="game" type="Node2D"]
+script = ExtResource("1_15p42")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, 58)
@@ -9853,7 +9856,7 @@ tile_map_data = PackedByteArray("AAD7//z/AQAZABYAAAD7//3/AQAZABYAAAD7//7/AQAZABY
 tile_set = SubResource("TileSet_1x5d1")
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("4_d4tkn")]
-position = Vector2(-357, -93)
+position = Vector2(-653, 49)
 
 [node name="coin" parent="." instance=ExtResource("5_xttwy")]
 position = Vector2(-45, 46)
@@ -9886,7 +9889,7 @@ position = Vector2(40, 43)
 position = Vector2(-208, 156)
 
 [node name="door" parent="." instance=ExtResource("8_ihhsk")]
-position = Vector2(441, 24)
+position = Vector2(444, 38)
 script = null
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -9899,3 +9902,7 @@ shape = SubResource("RectangleShape2D_5av1x")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("9_4onms")]
+
+[node name="Transitiondoor" parent="." instance=ExtResource("11_d4tkn")]
+position = Vector2(-115, -198.625)
+scale = Vector2(0.656, 0.529)

@@ -771,11 +771,11 @@ cache/0/16/0/glyphs/402653224/texture_idx = 0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_duoip"]
 texture = ExtResource("1_duoip")
-region_rect = Rect2(2610, 1640, 180, 180)
+region_rect = Rect2(1880, 1640, 180, 180)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ovrb5"]
 texture = ExtResource("1_duoip")
-region_rect = Rect2(2240, 1910, 170, 170)
+region_rect = Rect2(1890, 1910, 170, 170)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1plsy"]
 texture = ExtResource("1_duoip")

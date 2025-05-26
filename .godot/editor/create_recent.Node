@@ -1,4 +1,5 @@
 CanvasLayer
+GridContainer
 Control
 ColorRect
 AnimationPlayer
@@ -11,5 +12,3 @@ AnimatedSprite2D
 TileMap
 Sprite2D
 CollisionShape2D
-Area2D
-TextureRect

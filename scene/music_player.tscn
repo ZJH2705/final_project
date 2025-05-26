@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2ftfuml8obuy"]
 
 [ext_resource type="AudioStream" uid="uid://cpbq6e7q374ol" path="res://assets/music/Oh Please - Telecasted.mp3" id="1_fvyft"]
-[ext_resource type="Script" uid="uid://i0l7cpgev4op" path="res://music_player.gd" id="2_k4xj7"]
+[ext_resource type="Script" uid="uid://i0l7cpgev4op" path="res://scene/script/music_player.gd" id="2_k4xj7"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

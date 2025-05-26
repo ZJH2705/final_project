@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Keep="*res://keep.gd"
-Music="*res://music_player.tscn"
+Keep="*res://scene/script/keep.gd"
+Music="*res://scene/music_player.tscn"
 
 [display]
 

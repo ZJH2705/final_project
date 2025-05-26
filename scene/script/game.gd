@@ -16,8 +16,13 @@ func _ready() -> void:
 
 func _on_enter() -> void:
 	Transition.play("doorclose")
+	await Transition.animation_finished
 	#轉場景
+	
+	get_tree().change_scene_to_file("res://scene/game_2.tscn")
+
 	pass
+	
 # 死亡
 #func _on_die() -> void:
 	#player.get_child(1).play("die")

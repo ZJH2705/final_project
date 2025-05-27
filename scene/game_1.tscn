@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bm1v1be8vytl7"]
+[gd_scene load_steps=20 format=4 uid="uid://bm1v1be8vytl7"]
 
 [ext_resource type="Script" uid="uid://nlt0ipeyodtm" path="res://scene/script/game_1.gd" id="1_uymj5"]
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="2_lhdpo"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://iemv8nqnd71d" path="res://scene/character.tscn" id="9_8m13r"]
 [ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="10_g0jah"]
 [ext_resource type="PackedScene" uid="uid://c580sqtamtoor" path="res://scene/pause_menu.tscn" id="11_d8hpy"]
+[ext_resource type="Theme" uid="uid://c78fh6kcfwmct" path="res://pause5.tres" id="12_lhdpo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
 texture = ExtResource("2_lhdpo")
@@ -9832,6 +9833,10 @@ sources/0 = SubResource("TileSetAtlasSource_sa0th")
 sources/4 = SubResource("TileSetAtlasSource_ll5lq")
 sources/1 = SubResource("TileSetAtlasSource_xlg7c")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j5n3g"]
+texture = ExtResource("4_3n864")
+region_rect = Rect2(710, 170, 109.955, 50)
+
 [node name="game" type="Node2D"]
 script = ExtResource("1_uymj5")
 
@@ -9890,6 +9895,36 @@ position = Vector2(-349, -82)
 position = Vector2(-98.5, -198.5)
 scale = Vector2(0.6485, 0.532)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 3
 
-[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("11_d8hpy")]
+[node name="Pause_menu" parent="UILayer" instance=ExtResource("11_d8hpy")]
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Pause" type="Button" parent="HUDLayer"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -662.0
+offset_top = -511.0
+offset_right = -1759.0
+offset_bottom = -1101.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme = ExtResource("12_lhdpo")
+
+[node name="Esc" type="Panel" parent="HUDLayer"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -658.0
+offset_top = -446.0
+offset_right = -1763.0
+offset_bottom = -1069.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_j5n3g")
+
+[connection signal="pressed" from="HUDLayer/Pause" to="." method="_on_pause_pressed"]

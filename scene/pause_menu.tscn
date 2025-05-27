@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c580sqtamtoor"]
+[gd_scene load_steps=9 format=3 uid="uid://c580sqtamtoor"]
 
 [ext_resource type="Script" uid="uid://cxljxbhgwtfgi" path="res://scene/script/pause_menu.gd" id="1_d3xb4"]
 [ext_resource type="Texture2D" uid="uid://b2xhhjkdi2a48" path="res://assets/暫停/pixil-frame-0 (19).png" id="1_p81d2"]
@@ -6,7 +6,6 @@
 [ext_resource type="Shader" uid="uid://1q8jqfj80sp1" path="res://pause_menu.gdshader" id="2_mxa3g"]
 [ext_resource type="Theme" uid="uid://q8haixyxsj6e" path="res://pause2.tres" id="3_d3xb4"]
 [ext_resource type="Theme" uid="uid://bq8m7vj56pnka" path="res://pause3.tres" id="4_mxa3g"]
-[ext_resource type="PackedScene" uid="uid://c40v4lgqotjis" path="res://scene/pausebutton.tscn" id="7_et5lo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e8sti"]
 shader = ExtResource("2_mxa3g")
@@ -18,7 +17,6 @@ region_rect = Rect2(0, 0, 1000, 1000)
 
 [node name="Pause_menu" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,11 +35,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.47451, 1, 1, 0.286275)
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="Panel" type="Panel" parent="ColorRect"]
 process_mode = 3
-visible = false
-
-[node name="Panel" type="Panel" parent="CanvasLayer2"]
+z_index = 1000
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.481
 anchor_top = 0.5
@@ -51,9 +48,11 @@ offset_left = -370.112
 offset_top = -196.0
 offset_right = 421.888
 offset_bottom = 429.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nwcfo")
 
-[node name="Back" type="Button" parent="CanvasLayer2/Panel"]
+[node name="Back" type="Button" parent="ColorRect/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -66,7 +65,7 @@ offset_right = -108.0
 offset_bottom = 70.0
 theme = ExtResource("2_2nc7s")
 
-[node name="Restart" type="Button" parent="CanvasLayer2/Panel"]
+[node name="Restart" type="Button" parent="ColorRect/Panel"]
 layout_mode = 0
 offset_left = 337.0
 offset_top = 166.0
@@ -74,7 +73,7 @@ offset_right = 408.0
 offset_bottom = 240.0
 theme = ExtResource("3_d3xb4")
 
-[node name="Resume" type="Button" parent="CanvasLayer2/Panel"]
+[node name="Resume" type="Button" parent="ColorRect/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -87,11 +86,6 @@ offset_right = 132.0
 offset_bottom = 56.25
 theme = ExtResource("4_mxa3g")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer2"]
-process_mode = 3
-
-[node name="Control" parent="CanvasLayer2/CanvasLayer" instance=ExtResource("7_et5lo")]
-
-[connection signal="pressed" from="CanvasLayer2/Panel/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="CanvasLayer2/Panel/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CanvasLayer2/Panel/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/Resume" to="." method="_on_resume_pressed"]

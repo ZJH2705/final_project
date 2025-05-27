@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cx782kx8gsnee"]
+[gd_scene load_steps=18 format=4 uid="uid://cx782kx8gsnee"]
 
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="1_6y2ld"]
 [ext_resource type="Script" uid="uid://gl2qkwldkmkd" path="res://scene/script/game_4.gd" id="1_xyaxd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cm4mt5e2p7rdt" path="res://scene/door.tscn" id="8_p6mln"]
 [ext_resource type="PackedScene" uid="uid://iemv8nqnd71d" path="res://scene/character.tscn" id="9_kcvmm"]
 [ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="9_xyaxd"]
+[ext_resource type="PackedScene" uid="uid://c580sqtamtoor" path="res://scene/pause_menu.tscn" id="10_kcvmm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
 texture = ExtResource("1_6y2ld")
@@ -9882,6 +9883,10 @@ scale = Vector2(0.6351, 0.5298)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("9_kcvmm")]
 position = Vector2(-355, -84)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("10_kcvmm")]
 
 [connection signal="body_entered" from="Area2D" to="TileMapLayer2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="TileMapLayer2" method="_on_area_2d_body_entered"]

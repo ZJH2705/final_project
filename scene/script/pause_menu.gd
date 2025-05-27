@@ -1,10 +1,16 @@
 extends Control
 
-var _is_paused:bool = false:
+
+
+var _is_paused: bool = false:
 	set(value):
 		_is_paused = value
-		get_tree().paused= _is_paused
 		visible = _is_paused
+		if _is_paused:
+			await get_tree().create_timer(0.01).timeout
+			get_tree().paused = true
+		else:
+			get_tree().paused = false
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape"):
@@ -15,6 +21,9 @@ func _unhandled_input(event: InputEvent) -> void:
 #	get_tree().paused = _is_paused
 #	visible = _is_paused
 
+func _on_pause_pressed() -> void:
+	print("Pause button pressed")
+	_is_paused = !_is_paused
 
 func _on_back_pressed() -> void:
 	_is_paused = false

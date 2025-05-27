@@ -1,12 +1,12 @@
 CanvasLayer
+Panel
 Button
+PanelContainer
 GridContainer
 Control
 ColorRect
 AnimationPlayer
-Panel
 VBoxContainer
-PanelContainer
 AudioStreamPlayer2D
 AnimatedSprite2D
 TileMap

@@ -14,3 +14,9 @@ res://scene/game_5.tscn
 res://scene/game66.tscn
 res://scene/game_1.tscn
 res://scene/game_4.tscn
+res://pause_button.gd
+res://pause4.tres
+res://pause5.tres
+res://scene/pausebutton.tscn
+res://scene/script/pause_menu.gd
+res://scene/script/canvas_layer_2.gd

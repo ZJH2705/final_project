@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://gl2qkwldkmkd" path="res://scene/script/game_4.gd" id="1_xyaxd"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="2_xyaxd"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="3_kcvmm"]
+<<<<<<< HEAD
+=======
+[ext_resource type="PackedScene" uid="uid://dltu3runi274s" path="res://scene/character1.tscn" id="4_sepx6"]
+>>>>>>> c6c54a7840e9c9190cb014c84c4b471151335795
 [ext_resource type="Script" uid="uid://cry82lccbbcsd" path="res://scene/script/tile_map_layer_.gd" id="4_xyaxd"]
 [ext_resource type="PackedScene" uid="uid://847on4jke4qp" path="res://scene/kill_zone.tscn" id="7_hwk7s"]
 [ext_resource type="PackedScene" uid="uid://cm4mt5e2p7rdt" path="res://scene/door.tscn" id="8_p6mln"]

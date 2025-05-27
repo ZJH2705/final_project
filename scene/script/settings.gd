@@ -11,7 +11,14 @@ func _ready():
 		Music.stop_music()
 
 func _on_reset_pressed() -> void:
-	pass # Replace with function body.
+	GameState.current_level = 1
+	GameState.current_game = 1
+	GameState.death_count = 0
+	
+	# Optionally delete saved file
+	if FileAccess.file_exists("user://save_data.json"):
+		DirAccess.remove_absolute("user://save_data.json")
+		
 
 
 func _on_back_pressed() -> void:

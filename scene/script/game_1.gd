@@ -9,6 +9,10 @@ extends Node2D
 #@onready var player = get_node("CharacterBody2D") # 角色
 
 func _ready() -> void:
+	GameState.current_level = 1
+	GameState.current_game = 1
+#	GameState.save_progress()
+	
 	Transition.play("dooropen")
 	Door.connect("enter" , Callable(self , "_on_enter"))  # 終點門信號連結
 	#trapcoin.connect("die" , Callable(self , "_on_die")) # 陷阱信號連結

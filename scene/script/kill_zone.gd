@@ -1,5 +1,7 @@
 extends Area2D
 
+signal die
+
 @onready var timer: Timer = $Timer
 var has_triggered = false
 
@@ -18,3 +20,4 @@ func _on_body_entered(body: Node2D) -> void:
 		timer.start()
 func _on_timer_timeout() -> void:
 	get_tree().reload_current_scene()
+	emit_signal("die")

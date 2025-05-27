@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://gl2qkwldkmkd" path="res://scene/script/game_4.gd" id="1_xyaxd"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="2_xyaxd"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="3_kcvmm"]
-[ext_resource type="PackedScene" uid="uid://dltu3runi274s" path="res://scene/character1.tscn" id="4_sepx6"]
-[ext_resource type="Script" uid="uid://cry82lccbbcsd" path="res://scene/script/tile_map_layer_1.gd" id="4_xyaxd"]
+[ext_resource type="Script" uid="uid://cry82lccbbcsd" path="res://scene/script/tile_map_layer_.gd" id="4_xyaxd"]
 [ext_resource type="PackedScene" uid="uid://847on4jke4qp" path="res://scene/kill_zone.tscn" id="7_hwk7s"]
 [ext_resource type="PackedScene" uid="uid://cm4mt5e2p7rdt" path="res://scene/door.tscn" id="8_p6mln"]
+[ext_resource type="PackedScene" uid="uid://iemv8nqnd71d" path="res://scene/character.tscn" id="9_kcvmm"]
 [ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="9_xyaxd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
@@ -9855,11 +9855,8 @@ tile_map_data = PackedByteArray("AAD7//z/AQAZABYAAAD7//3/AQAZABYAAAD7//7/AQAZABY
 tile_set = SubResource("TileSet_1x5d1")
 script = ExtResource("4_xyaxd")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_sepx6")]
-position = Vector2(-595, 50)
-
 [node name="kill zone" parent="." instance=ExtResource("7_hwk7s")]
-position = Vector2(-110, 304)
+position = Vector2(-411, 100)
 
 [node name="door" parent="." instance=ExtResource("8_p6mln")]
 position = Vector2(432, 38)
@@ -9882,6 +9879,9 @@ shape = SubResource("RectangleShape2D_xyaxd")
 visible = false
 position = Vector2(-94.1, -199.125)
 scale = Vector2(0.6351, 0.5298)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("9_kcvmm")]
+position = Vector2(-355, -84)
 
 [connection signal="body_entered" from="Area2D" to="TileMapLayer2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="TileMapLayer2" method="_on_area_2d_body_entered"]

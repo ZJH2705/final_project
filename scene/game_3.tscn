@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ddlvcgujvpldi" path="res://scene/game66.tscn" id="1_ywiwd"]
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="2_074wk"]
-[ext_resource type="PackedScene" path="res://scene/platform.tscn" id="2_f3uhq"]
+[ext_resource type="PackedScene" uid="uid://c672cktomv05m" path="res://scene/platform.tscn" id="2_f3uhq"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="3_ri2hx"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="4_tej0p"]
 
@@ -9870,6 +9870,8 @@ _data = {
 
 [node name="Camera2D" parent="." index="0"]
 position = Vector2(4, 41)
+offset = Vector2(-100, 10)
+zoom = Vector2(1, 1)
 
 [node name="TileMapLayer2" parent="." index="1"]
 tile_map_data = PackedByteArray("AADW/wQAAAAEAA4AAADX/wQAAAAEAA4AAADY/wQAAAAEAA4AAADZ/wQAAAAEAA4AAADa/wQAAAAEAA4AAADb/wQAAAAEAA4AAADc/wQAAAAEAA4AAADd/wQAAAAEAA4AAADd/wUAAAAEAA4AAADc/wUAAAAEAA4AAADb/wUAAAAEAA4AAADa/wUAAAAEAA4AAADZ/wUAAAAEAA4AAADW/wUAAAAEAA4AAADX/wUAAAAEAA4AAADY/wUAAAAEAA4AAADW/wYAAAAEAA4AAADX/wYAAAAEAA4AAADY/wYAAAAEAA4AAADZ/wYAAAAEAA4AAADa/wYAAAAEAA4AAADb/wYAAAAEAA4AAADc/wYAAAAEAA4AAADd/wYAAAAEAA4AAADd/wcAAAAEAA4AAADc/wcAAAAEAA4AAADb/wcAAAAEAA4AAADa/wcAAAAEAA4AAADZ/wcAAAAEAA4AAADY/wcAAAAEAA4AAADX/wcAAAAEAA4AAADW/wcAAAAEAA4AAAAWAAQAAAAEAA4AAAAUAAQAAAAEAA4AAAAVAAQAAAAEAA4AAAAXAAQAAAAEAA4AAAAYAAQAAAAEAA4AAAAZAAQAAAAEAA4AAAAaAAQAAAAEAA4AAAAbAAQAAAAEAA4AAAAcAAQAAAAEAA4AAAAdAAQAAAAEAA4AAAAdAAUAAAAEAA4AAAAcAAUAAAAEAA4AAAAbAAUAAAAEAA4AAAAaAAUAAAAEAA4AAAAZAAUAAAAEAA4AAAAYAAUAAAAEAA4AAAAXAAUAAAAEAA4AAAAWAAUAAAAEAA4AAAAZAAYAAAAEAA4AAAAYAAYAAAAEAA4AAAAXAAYAAAAEAA4AAAAWAAYAAAAEAA4AAAAVAAYAAAAEAA4AAAAUAAYAAAAEAA4AAAAUAAUAAAAEAA4AAAAVAAUAAAAEAA4AAAAdAAYAAAAEAA4AAAAcAAYAAAAEAA4AAAAbAAYAAAAEAA4AAAAaAAYAAAAEAA4AAAAUAAcAAAAEAA4AAAAVAAcAAAAEAA4AAAAWAAcAAAAEAA4AAAAXAAcAAAAEAA4AAAAYAAcAAAAEAA4AAAAZAAcAAAAEAA4AAAAaAAcAAAAEAA4AAAAbAAcAAAAEAA4AAAAcAAcAAAAEAA4AAAAdAAcAAAAEAA4AAADV/wQAAAAEAA4AAADV/wUAAAAEAA4AAADV/wYAAAAEAA4AAADV/wcAAAAEAA4AAAA=")
@@ -9880,17 +9882,17 @@ tile_map_data = PackedByteArray("AAD7//z/AQAZABYAAAD7//3/AQAZABYAAAD7//7/AQAZABY
 tile_set = SubResource("TileSet_1x5d1")
 
 [node name="CharacterBody2D" parent="." index="3"]
-position = Vector2(-305, -82)
+position = Vector2(-362, -83)
 
 [node name="coin3" parent="." index="6"]
 position = Vector2(-174, 53)
 
 [node name="kill zone" parent="." index="13"]
-position = Vector2(-208, 156)
+position = Vector2(-227, 89)
 
 [node name="door" parent="." index="14"]
-position = Vector2(436, 48)
-script = null
+position = Vector2(458, 38)
+scale = Vector2(1, 1)
 
 [node name="platform" parent="." index="15" instance=ExtResource("2_f3uhq")]
 position = Vector2(-1227, -585)
@@ -9903,5 +9905,6 @@ libraries = {
 autoplay = "move"
 
 [node name="Transitiondoor" parent="." index="16"]
+visible = false
 position = Vector2(-104.5, -200.016)
 scale = Vector2(0.6505, 0.526425)

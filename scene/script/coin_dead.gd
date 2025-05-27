@@ -15,7 +15,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 		var player = body as CharacterBody2D
 		player.die() #呼叫自己死亡
-
+		print("hello")
 		await player.anim.animation_finished
 		timer.start()
 func _on_timer_timeout() -> void:

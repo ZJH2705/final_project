@@ -171,6 +171,4 @@ shape = SubResource("RectangleShape2D_k8rrn")
 position = Vector2(-310, 133)
 scale = Vector2(0.212389, 0.165542)
 sprite_frames = SubResource("SpriteFrames_jnn1m")
-animation = &"die"
-frame = 1
-frame_progress = 1.0
+animation = &"idle"

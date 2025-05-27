@@ -19,6 +19,6 @@ func _on_enter() -> void:
 	await Transition.animation_finished
 	#轉場景
 	
-	get_tree().change_scene_to_file("res://scene/game_4.tscn")
+	get_tree().change_scene_to_file("res://scene/game_5.tscn")
 
 	pass

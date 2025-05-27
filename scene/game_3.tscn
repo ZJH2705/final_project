@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://xwwbaahgkrif"]
+[gd_scene load_steps=16 format=4 uid="uid://xwwbaahgkrif"]
 
 [ext_resource type="PackedScene" uid="uid://ddlvcgujvpldi" path="res://scene/game66.tscn" id="1_ywiwd"]
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="2_074wk"]
 [ext_resource type="PackedScene" uid="uid://c672cktomv05m" path="res://scene/platform.tscn" id="2_f3uhq"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="3_ri2hx"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="4_tej0p"]
+[ext_resource type="PackedScene" uid="uid://c580sqtamtoor" path="res://scene/pause_menu.tscn" id="6_ri2hx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
 texture = ExtResource("2_074wk")
@@ -9908,3 +9909,7 @@ autoplay = "move"
 visible = false
 position = Vector2(-104.5, -200.016)
 scale = Vector2(0.6505, 0.526425)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="17"]
+
+[node name="Pause_menu" parent="CanvasLayer" index="0" instance=ExtResource("6_ri2hx")]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ddlvcgujvpldi" path="res://scene/game66.tscn" id="1_ywiwd"]
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="2_074wk"]
-[ext_resource type="PackedScene" path="res://scene/platform.tscn" id="2_f3uhq"]
+[ext_resource type="PackedScene" uid="uid://c672cktomv05m" path="res://scene/platform.tscn" id="2_f3uhq"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="3_ri2hx"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="4_tej0p"]
 

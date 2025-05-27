@@ -64,6 +64,16 @@ offset_bottom = 164.0
 size_flags_vertical = 3
 theme = ExtResource("5_2atga")
 
+[node name="PLAY2" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -122.563
+offset_top = -3.14263
+offset_right = -107.563
+offset_bottom = 26.8574
+theme = ExtResource("3_sepwh")
+
 [connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="OPTION" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PLAY2" to="." method="_on_play_2_pressed"]

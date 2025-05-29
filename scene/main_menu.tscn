@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd750p3xsrtwc"]
+[gd_scene load_steps=9 format=3 uid="uid://cd750p3xsrtwc"]
 
 [ext_resource type="Script" uid="uid://d28k1mtc7gj3k" path="res://scene/script/main_menu.gd" id="1_hxu56"]
 [ext_resource type="Texture2D" uid="uid://c6e0pxiqbvccy" path="res://assets/首頁-20250430T034940Z-1-001/首頁/主頁面背景圖.png" id="2_2fwvj"]
 [ext_resource type="Theme" uid="uid://bg7m5fkkhc1ph" path="res://default.tres" id="3_sepwh"]
 [ext_resource type="Theme" uid="uid://cgejia63hlo0l" path="res://default2.tres" id="4_14wem"]
 [ext_resource type="Theme" uid="uid://cyylokydfnyae" path="res://default3.tres" id="5_2atga"]
+[ext_resource type="Texture2D" uid="uid://gqdvqtn5frww" path="res://assets/首頁-20250430T034940Z-1-001/首頁/死亡次數.png" id="6_14wem"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0iwki"]
 texture = ExtResource("2_2fwvj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2atga"]
+texture = ExtResource("6_14wem")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -72,6 +76,22 @@ offset_top = -3.14263
 offset_right = -107.563
 offset_bottom = 26.8574
 theme = ExtResource("3_sepwh")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 75.4233
+offset_top = 7.54232
+offset_right = 110.423
+offset_bottom = 42.5423
+theme_override_styles/panel = SubResource("StyleBoxTexture_2atga")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 752.0
+offset_top = 360.0
+offset_right = 792.0
+offset_bottom = 383.0
 
 [connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="OPTION" to="." method="_on_option_pressed"]

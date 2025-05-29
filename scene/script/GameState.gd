@@ -4,6 +4,9 @@ var current_level := 1
 var current_game := 1
 var death_count := 0
 
+func update_death_label():
+	$CanvasLayer/Label.text = "Deaths: %d" % GameState.death_count
+
 #func save_progress():
 #	var data = {
 #		"level": current_level,

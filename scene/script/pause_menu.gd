@@ -43,6 +43,7 @@ func toggle_pause() -> void:
 
 func _on_back_pressed() -> void:
 	_is_paused = false
+	Transition.has_played_intro = false
 	get_tree().change_scene_to_file("res://scene/main_menu.tscn")
 
 

@@ -18,3 +18,9 @@ res://scene/script/game_4.gd
 res://scene/game_4.tscn
 res://scene/game_5.tscn
 res://scene/character.tscn
+res://scene/script/transition.gd
+res://scene/Transitiondoor.tscn
+res://scene/script/pause_menu.gd
+res://scene/script/character.gd
+res://scene/script/GameState.gd
+res://scene/script/main_menu.gd

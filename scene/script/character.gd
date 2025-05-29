@@ -16,6 +16,7 @@ func _pass():
 func _on_death_animation_finished():
 	# 這裡可以添加重新載入場景或其他你想做的操作
  print("死亡動畫播放完畢")
+ GameState.death_count=GameState.death_count+1
 	# 如果你想重新載入場景，可以在這裡加上
  get_tree().reload_current_scene()
 

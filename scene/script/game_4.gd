@@ -2,7 +2,7 @@ extends Node2D
 
 # 終點門和轉場
 @onready var Door = get_node("door")
-@onready var Transition = get_node("Transitiondoor")
+@onready var Transitiondoor = get_node("Transitiondoor")
 
 @onready var pause_menu_instance = $"UILayer/Pause_menu"
 @onready var external_pause_button = $"Pause"
@@ -15,22 +15,27 @@ func _ready() -> void:
 	GameState.current_game = 4
 	#GameState.save_progress()
 	
+	if not Transition.has_played_intro:
+		Transitiondoor.play("dooropen")
+		Transition.has_played_intro = true
+	else:
+		Transitiondoor.stop()
+	
 	if pause_menu_instance:
 		pause_menu_instance.visible = false # Ensure it starts hidden
 		pause_menu_instance.connect("menu_closed", _on_pause_menu_closed) # <--- ADD THIS LINE
 	#else:
 		#print("Error: PauseMenu instance not found in _ready!")
 		
-	Transition.play("dooropen")
 	Door.connect("enter" , Callable(self , "_on_enter"))  # 終點門信號連結
 	#trapcoin.connect("die" , Callable(self , "_on_die")) # 陷阱信號連結
 	pass
 	
 func _on_enter() -> void:
-	Transition.play("doorclose")
-	await Transition.animation_finished
+	Transitiondoor.play("doorclose")
+	await Transitiondoor.animation_finished
+	Transition.has_played_intro = false
 	#轉場景
-	
 	get_tree().change_scene_to_file("res://scene/game_5.tscn")
 
 	pass

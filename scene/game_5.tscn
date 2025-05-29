@@ -4,7 +4,10 @@
 
 [node name="game" instance=ExtResource("1_jyx33")]
 
-[node name="CharacterBody2D" parent="." index="17"]
+[node name="Panel" parent="." index="0"]
+offset_bottom = 129.0
+
+[node name="CharacterBody2D" parent="." index="18"]
 position = Vector2(-365, -82)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

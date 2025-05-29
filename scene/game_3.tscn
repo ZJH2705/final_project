@@ -9938,8 +9938,8 @@ autoplay = "move"
 position = Vector2(-100, -200)
 scale = Vector2(0.6505, 0.526425)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="20"]
+[node name="UILayer" type="CanvasLayer" parent="." index="20"]
 
-[node name="Pause_menu" parent="CanvasLayer" index="0" instance=ExtResource("6_ri2hx")]
+[node name="Pause_menu" parent="UILayer" index="0" instance=ExtResource("6_ri2hx")]
 
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

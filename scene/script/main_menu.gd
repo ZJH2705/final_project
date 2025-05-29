@@ -4,7 +4,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	update_death_label()
+	#await get_tree().process_frame
+	#update_death_label()
 	pass
 
 
@@ -12,8 +13,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#$CanvasLayer/Label.text = "%d" % GameState.death_count
-	pass
+	$"CanvasLayer/Label".text = "%d" % GameState.death_count
+	#pass
 
 
 func _on_play_pressed() -> void:
@@ -38,5 +39,5 @@ func _on_exit_pressed() -> void:
 func _on_play_2_pressed() -> void:
 	pass # Replace with function body.
 	
-func update_death_label():
-	$CanvasLayer/Label.text = "%d" % GameState.death_count
+#func update_death_label():
+	#$"CanvasLayer/Label".text = "%d" % GameState.death_count

@@ -9910,9 +9910,9 @@ position = Vector2(-353, -94)
 position = Vector2(340, -123)
 shape = SubResource("RectangleShape2D_5av1x")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="."]
 
-[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("9_4onms")]
+[node name="Pause_menu" parent="UILayer" instance=ExtResource("9_4onms")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("11_xttwy")]
 position = Vector2(-343, -85)

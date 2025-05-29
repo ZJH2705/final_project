@@ -9894,9 +9894,9 @@ shape = SubResource("RectangleShape2D_xyaxd")
 [node name="CharacterBody2D" parent="." instance=ExtResource("9_kcvmm")]
 position = Vector2(-355, -84)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="."]
 
-[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("10_kcvmm")]
+[node name="Pause_menu" parent="UILayer" instance=ExtResource("10_kcvmm")]
 offset_left = 4.0
 offset_right = 4.0
 

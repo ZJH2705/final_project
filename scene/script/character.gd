@@ -16,7 +16,7 @@ func _pass():
 func _on_death_animation_finished():
 	# 這裡可以添加重新載入場景或其他你想做的操作
  print("死亡動畫播放完畢")
- GameState.death_count=GameState.death_count+1
+ 
 	# 如果你想重新載入場景，可以在這裡加上
  get_tree().reload_current_scene()
 
@@ -25,11 +25,15 @@ func die():
  if is_dead:
   return
  is_dead = true
+ 
  velocity = Vector2.ZERO
  anim.play("die")
+ 
  await anim.animation_finished
  print("check")
+ 
  #_on_death_animation_finished()  # 動畫結束後執行後續操作
+ 
  return
 func _physics_process(delta: float) -> void:
  # 加重力

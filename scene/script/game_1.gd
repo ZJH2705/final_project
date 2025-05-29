@@ -21,7 +21,7 @@ func _ready() -> void:
 		Transition.has_played_intro = true
 	else:
 		Transitiondoor.stop()
-		
+	print(GameState.death_count)	
 	if pause_menu_instance:
 		pause_menu_instance.visible = false # Ensure it starts hidden
 		pause_menu_instance.connect("menu_closed", _on_pause_menu_closed) # <--- ADD THIS LINE

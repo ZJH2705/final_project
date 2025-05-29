@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://2j46h16150k7" path="res://scene/script/settings.gd" id="1_keur6"]
 [ext_resource type="Texture2D" uid="uid://d3m8mws8mc8mm" path="res://assets/設定頁面/setting bg.png" id="1_likc5"]
-[ext_resource type="Theme" uid="uid://si1c0i87wje7" path="res://setting.tres" id="2_ok4lx"]
-[ext_resource type="Theme" uid="uid://d4bbewam0k8ch" path="res://setting2.tres" id="3_uhf66"]
-[ext_resource type="Theme" uid="uid://dx4018jhw22kf" path="res://setting3.tres" id="4_ftovt"]
-[ext_resource type="Theme" uid="uid://dxb5qy3lhiwp2" path="res://setting4.tres" id="5_wyye3"]
+[ext_resource type="Theme" uid="uid://si1c0i87wje7" path="res://style/setting.tres" id="2_ok4lx"]
+[ext_resource type="Theme" uid="uid://d4bbewam0k8ch" path="res://style/setting2.tres" id="3_uhf66"]
+[ext_resource type="Theme" uid="uid://dx4018jhw22kf" path="res://style/setting3.tres" id="4_ftovt"]
+[ext_resource type="Theme" uid="uid://dxb5qy3lhiwp2" path="res://style/setting4.tres" id="5_wyye3"]
+
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ok4lx"]
 texture = ExtResource("1_likc5")

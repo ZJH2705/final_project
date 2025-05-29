@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://iemv8nqnd71d" path="res://scene/character.tscn" id="9_8m13r"]
 [ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="10_g0jah"]
 [ext_resource type="PackedScene" uid="uid://c580sqtamtoor" path="res://scene/pause_menu.tscn" id="11_d8hpy"]
-[ext_resource type="Theme" uid="uid://c78fh6kcfwmct" path="res://pause5.tres" id="12_lhdpo"]
+[ext_resource type="Theme" uid="uid://c78fh6kcfwmct" path="res://style/pause5.tres" id="12_lhdpo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
 texture = ExtResource("2_lhdpo")

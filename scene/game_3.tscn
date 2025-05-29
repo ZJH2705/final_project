@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="3_ri2hx"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="4_tej0p"]
 [ext_resource type="PackedScene" uid="uid://c580sqtamtoor" path="res://scene/pause_menu.tscn" id="6_ri2hx"]
-[ext_resource type="Theme" uid="uid://c78fh6kcfwmct" path="res://pause5.tres" id="7_tej0p"]
+[ext_resource type="Theme" uid="uid://c78fh6kcfwmct" path="res://style/pause5.tres" id="7_tej0p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ri2hx"]
 texture = ExtResource("3_ri2hx")

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cxljxbhgwtfgi" path="res://scene/script/pause_menu.gd" id="1_d3xb4"]
 [ext_resource type="Texture2D" uid="uid://b2xhhjkdi2a48" path="res://assets/暫停/pixil-frame-0 (19).png" id="1_p81d2"]
-[ext_resource type="Theme" uid="uid://dg45pub57bp0j" path="res://pause1.tres" id="2_2nc7s"]
-[ext_resource type="Shader" uid="uid://1q8jqfj80sp1" path="res://pause_menu.gdshader" id="2_mxa3g"]
-[ext_resource type="Theme" uid="uid://q8haixyxsj6e" path="res://pause2.tres" id="3_d3xb4"]
-[ext_resource type="Theme" uid="uid://bq8m7vj56pnka" path="res://pause3.tres" id="4_mxa3g"]
+[ext_resource type="Theme" uid="uid://dg45pub57bp0j" path="res://style/pause1.tres" id="2_2nc7s"]
+[ext_resource type="Shader" uid="uid://1q8jqfj80sp1" path="res://style/pause_menu.gdshader" id="2_mxa3g"]
+[ext_resource type="Theme" uid="uid://q8haixyxsj6e" path="res://style/pause2.tres" id="3_d3xb4"]
+[ext_resource type="Theme" uid="uid://bq8m7vj56pnka" path="res://style/pause3.tres" id="4_mxa3g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e8sti"]
 shader = ExtResource("2_mxa3g")

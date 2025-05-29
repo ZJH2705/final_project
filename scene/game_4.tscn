@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://iemv8nqnd71d" path="res://scene/character.tscn" id="9_kcvmm"]
 [ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="9_xyaxd"]
 [ext_resource type="PackedScene" uid="uid://c580sqtamtoor" path="res://scene/pause_menu.tscn" id="10_kcvmm"]
-[ext_resource type="Theme" uid="uid://c78fh6kcfwmct" path="res://pause5.tres" id="11_sepx6"]
+[ext_resource type="Theme" uid="uid://c78fh6kcfwmct" path="res://style/pause5.tres" id="11_sepx6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sepx6"]
 texture = ExtResource("2_xyaxd")

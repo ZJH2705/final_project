@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d28k1mtc7gj3k" path="res://scene/script/main_menu.gd" id="1_hxu56"]
 [ext_resource type="Texture2D" uid="uid://c6e0pxiqbvccy" path="res://assets/首頁-20250430T034940Z-1-001/首頁/主頁面背景圖.png" id="2_2fwvj"]
-[ext_resource type="Theme" uid="uid://bg7m5fkkhc1ph" path="res://default.tres" id="3_sepwh"]
-[ext_resource type="Theme" uid="uid://cgejia63hlo0l" path="res://default2.tres" id="4_14wem"]
-[ext_resource type="Theme" uid="uid://cyylokydfnyae" path="res://default3.tres" id="5_2atga"]
+[ext_resource type="Theme" uid="uid://bg7m5fkkhc1ph" path="res://style/default.tres" id="3_sepwh"]
+[ext_resource type="Theme" uid="uid://cgejia63hlo0l" path="res://style/default2.tres" id="4_14wem"]
+[ext_resource type="Theme" uid="uid://cyylokydfnyae" path="res://style/default3.tres" id="5_2atga"]
 [ext_resource type="Texture2D" uid="uid://gqdvqtn5frww" path="res://assets/首頁-20250430T034940Z-1-001/首頁/死亡次數.png" id="6_14wem"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0iwki"]

@@ -21,3 +21,7 @@ res://scene/script/character.gd
 res://scene/script/game_1.gd
 res://scene/script/coin_dead.gd
 res://scene/script/kill_zone.gd
+res://style/default.tres
+res://style/default2.tres
+res://style/default3.tres
+res://style/pause_menu.gdshader

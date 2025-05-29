@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://xwwbaahgkrif"]
+[gd_scene load_steps=20 format=4 uid="uid://xwwbaahgkrif"]
 
 [ext_resource type="PackedScene" uid="uid://ddlvcgujvpldi" path="res://scene/game66.tscn" id="1_ywiwd"]
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="2_074wk"]
@@ -9863,21 +9863,40 @@ tracks/0/path = NodePath("../platform:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.0333333, 4.96667),
+"times": PackedFloat32Array(-0.0333333, 4.26667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-1227, -585), Vector2(-359, -584)]
 }
 
+[sub_resource type="Animation" id="Animation_tej0p"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1267, -570), Vector2(-471, -569)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p34k1"]
 _data = {
 &"RESET": SubResource("Animation_tmdpi"),
-&"move": SubResource("Animation_f3uhq")
+&"move": SubResource("Animation_f3uhq"),
+&"new_animation": SubResource("Animation_tej0p")
 }
 
 [node name="game" instance=ExtResource("1_ywiwd")]
 
 [node name="Panel" type="Panel" parent="." index="0"]
+visible = false
 offset_left = -577.0
 offset_top = -29.0
 offset_right = 388.0
@@ -9911,6 +9930,7 @@ position = Vector2(458, 38)
 scale = Vector2(1, 1)
 
 [node name="Pause" type="Button" parent="." index="16"]
+visible = false
 offset_left = -639.0
 offset_top = -495.0
 offset_right = -593.0
@@ -9918,6 +9938,7 @@ offset_bottom = -449.0
 theme = ExtResource("7_tej0p")
 
 [node name="Panel2" type="Panel" parent="." index="17"]
+visible = false
 offset_left = -637.0
 offset_top = -446.0
 offset_right = -597.0
@@ -9927,19 +9948,21 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_5voc6")
 [node name="platform" parent="." index="18" instance=ExtResource("2_f3uhq")]
 position = Vector2(-1227, -585)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="platform" index="2"]
-root_node = NodePath("../../TileMapLayer")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="19"]
+root_node = NodePath("../TileMapLayer")
 libraries = {
 &"": SubResource("AnimationLibrary_p34k1")
 }
-autoplay = "move"
+autoplay = "new_animation"
 
-[node name="Transitiondoor" parent="." index="19"]
+[node name="Transitiondoor" parent="." index="20"]
+visible = false
 position = Vector2(-100, -200)
 scale = Vector2(0.6505, 0.526425)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="20"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="21"]
 
 [node name="Pause_menu" parent="CanvasLayer" index="0" instance=ExtResource("6_ri2hx")]
+visible = false
 
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

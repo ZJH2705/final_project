@@ -35,6 +35,11 @@ func _on_enter() -> void:
 
 	pass
 	
+func _on_ExternalPauseButton_pressed(): 
+	pause_menu_instance.toggle_pause()
+	
+
+
 func _on_pause_pressed() -> void:
 	if pause_menu_instance: # Make sure the instance exists
 		pause_menu_instance.toggle_pause()

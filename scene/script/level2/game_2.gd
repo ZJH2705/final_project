@@ -12,7 +12,7 @@ extends Node2D
 
 func _ready() -> void:
 	GameState.current_level = 2
-	GameState.current_game = 1
+	GameState.current_game = 2
 	#GameState.save_progress()
 	
 	if not Transition.has_played_intro:

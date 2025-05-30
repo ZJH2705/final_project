@@ -3,8 +3,14 @@ extends Node
 var current_level := 1
 var current_game := 1
 var death_count := 0
+var max_unlocked_level := 1
 
 
+var level_game_progress := {
+	1: 1,
+	2: 1,
+	3: 1
+}
 
 #func save_progress():
 #	var data = {

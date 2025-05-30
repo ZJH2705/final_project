@@ -6,6 +6,7 @@ extends Control
 func _ready() -> void:
 	#await get_tree().process_frame
 	#update_death_label()
+	update_level_buttons()
 	pass
 
 
@@ -14,18 +15,21 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$"CanvasLayer/Label".text = "%d" % GameState.death_count
+	
+	
+	if Input.is_action_just_pressed("ui_right"):
+		if GameState.current_level < GameState.max_unlocked_level:
+			GameState.current_level += 1
+			update_level_buttons()
+
+	if Input.is_action_just_pressed("ui_left"):
+		if GameState.current_level > 1:
+			GameState.current_level -= 1
+			update_level_buttons()
 	#pass
 
 
-func _on_play_pressed() -> void:
-	#GameState.load_progress()  # Load saved game state
-	var level = GameState.current_level
-	var game_num = GameState.current_game
-	
-	#print(level) 
-	#print(game_num)
-	var scene_path := "res://scene/game_%d.tscn" % [game_num]
-	get_tree().change_scene_to_file(scene_path)
+
 
 
 func _on_option_pressed() -> void:
@@ -35,9 +39,31 @@ func _on_option_pressed() -> void:
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 
+func _on_play_1_pressed() -> void:
+	var level = GameState.current_level
+	GameState.current_game = GameState.level_game_progress[level]
+	var game = GameState.current_game
+	var scene_path := "res://scene/level_1/game_%d.tscn" % [game]
+	get_tree().change_scene_to_file(scene_path)
+
+	
+
 
 func _on_play_2_pressed() -> void:
-	pass # Replace with function body.
+	var level = GameState.current_level
+	GameState.current_game = GameState.level_game_progress[level]
+	var game = GameState.current_game
+	var scene_path := "res://scene/level_2/game_%d.tscn" % [game]
+	get_tree().change_scene_to_file(scene_path)
 	
-#func update_death_label():
-	#$"CanvasLayer/Label".text = "%d" % GameState.death_count
+func update_level_buttons() -> void:
+	# Hide all buttons by default
+	$PLAY1.visible = false
+	$PLAY2.visible = false
+
+	if GameState.current_level == 1:
+		$PLAY1.visible = true
+	elif GameState.current_level == 2 and GameState.max_unlocked_level >= 2:
+		$PLAY2.visible = true
+
+	

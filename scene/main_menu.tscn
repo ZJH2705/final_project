@@ -38,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_0iwki")
 
-[node name="PLAY" type="Button" parent="."]
+[node name="PLAY1" type="Button" parent="."]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 offset_left = -235.069
@@ -69,7 +69,6 @@ size_flags_vertical = 3
 theme = ExtResource("5_2atga")
 
 [node name="PLAY2" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = -122.563
 offset_top = -3.14263
@@ -93,7 +92,7 @@ offset_top = 360.0
 offset_right = 792.0
 offset_bottom = 383.0
 
-[connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PLAY1" to="." method="_on_play_1_pressed"]
 [connection signal="pressed" from="OPTION" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="PLAY2" to="." method="_on_play_2_pressed"]

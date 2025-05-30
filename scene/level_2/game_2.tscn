@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvs6u5xasp1bw"]
 
-[ext_resource type="PackedScene" uid="uid://5scmjn1mk8u3" path="res://scene/game_2.tscn" id="1_jyx33"]
+[ext_resource type="PackedScene" uid="uid://5scmjn1mk8u3" path="res://scene/level_1/game_2.tscn" id="1_y2acb"]
 
-[node name="game" instance=ExtResource("1_jyx33")]
+[node name="game" instance=ExtResource("1_y2acb")]
 
 [node name="Panel" parent="." index="0"]
 offset_bottom = 129.0

@@ -18,7 +18,7 @@ func _on_body_entered(body: Node2D) -> void:
 		GameState.death_count+=1
 
 		await player.anim.animation_finished
-		timer.start()
+		#timer.start()
 func _on_timer_timeout() -> void:
 	get_tree().reload_current_scene()
 	emit_signal("die")

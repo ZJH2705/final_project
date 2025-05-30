@@ -7,7 +7,6 @@
 [ext_resource type="Theme" uid="uid://dx4018jhw22kf" path="res://style/setting3.tres" id="4_ftovt"]
 [ext_resource type="Theme" uid="uid://dxb5qy3lhiwp2" path="res://style/setting4.tres" id="5_wyye3"]
 
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ok4lx"]
 texture = ExtResource("1_likc5")
 

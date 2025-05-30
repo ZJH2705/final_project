@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 AudioStreamPlayer
+=======
+Timer
+CollisionShape2D
+Area2D
+>>>>>>> 8fc3aded22a7e86c789871dc908a05b82f4dfc4c
 AnimationPlayer
 Label
 CanvasLayer
@@ -10,6 +16,3 @@ Control
 ColorRect
 VBoxContainer
 AudioStreamPlayer2D
-AnimatedSprite2D
-TileMap
-Sprite2D

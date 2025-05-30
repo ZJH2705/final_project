@@ -9839,7 +9839,7 @@ sources/4 = SubResource("TileSetAtlasSource_ll5lq")
 sources/1 = SubResource("TileSetAtlasSource_xlg7c")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5av1x"]
-size = Vector2(17, 24)
+size = Vector2(23, 23)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m71ce"]
 texture = ExtResource("3_15p42")

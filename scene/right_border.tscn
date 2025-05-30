@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck6p7knm8pa4x"]
+
+[ext_resource type="Script" uid="uid://dm0pdaty6euyc" path="res://scene/script/right_border.gd" id="1_7xa2b"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0tv2e"]
+normal = Vector2(-0.999979, 0.00645148)
+
+[node name="right_border" type="Area2D"]
+script = ExtResource("1_7xa2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_0tv2e")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

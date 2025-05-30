@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://q8haixyxsj6e" path="res://style/pause2.tres" id="3_d3xb4"]
 [ext_resource type="Theme" uid="uid://bq8m7vj56pnka" path="res://style/pause3.tres" id="4_mxa3g"]
 
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e8sti"]
 shader = ExtResource("2_mxa3g")
 shader_parameter/lod = 0.0

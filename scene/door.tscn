@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bitwxb3njqq3v" path="res://assets/門-20250430T034938Z-1-001/門/門動畫7.png" id="9_hket6"]
 [ext_resource type="Texture2D" uid="uid://diou1xe2dltj8" path="res://assets/門-20250430T034938Z-1-001/門/門動畫8.png" id="10_u1f7f"]
 
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pjuel"]
 animations = [{
 "frames": [{

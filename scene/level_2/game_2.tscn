@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bvs6u5xasp1bw"]
+[gd_scene load_steps=29 format=4 uid="uid://bvs6u5xasp1bw"]
 
 [ext_resource type="Script" uid="uid://h6l6k6ilkhv" path="res://scene/script/level1/game_2.gd" id="1_rhgd3"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="2_c3sto"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="12_kewfm"]
 [ext_resource type="PackedScene" uid="uid://c672cktomv05m" path="res://scene/platform.tscn" id="13_ttard"]
 [ext_resource type="Script" uid="uid://c2dsss7kt4mq7" path="res://scene/script/platform.gd" id="14_j4auw"]
+[ext_resource type="PackedScene" uid="uid://cxrrbiyu75ym1" path="res://scene/left_border.tscn" id="15_m0tx1"]
+[ext_resource type="PackedScene" uid="uid://ck6p7knm8pa4x" path="res://scene/right_border.tscn" id="16_nhksg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4tkn"]
 texture = ExtResource("2_c3sto")
@@ -9948,7 +9950,7 @@ position = Vector2(444, 38)
 [node name="Pause_menu" parent="UILayer" instance=ExtResource("9_ki2ah")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("10_8tjh7")]
-position = Vector2(-365, -82)
+position = Vector2(-360, -82)
 
 [node name="Pause" type="Button" parent="."]
 offset_left = -639.0
@@ -9987,5 +9989,13 @@ position = Vector2(363, 358)
 position = Vector2(316.5, -107.5)
 shape = SubResource("RectangleShape2D_5av1x")
 
+[node name="left border" parent="." instance=ExtResource("15_m0tx1")]
+position = Vector2(-684, -27)
+
+[node name="right_border" parent="." instance=ExtResource("16_nhksg")]
+position = Vector2(481, -13)
+
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
 [connection signal="body_entered" from="platform/Area2D" to="platform" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="left border" to="right_border" method="_on_body_entered"]
+[connection signal="body_entered" from="right_border" to="." method="_on_body_entered"]

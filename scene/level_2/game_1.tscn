@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cx782kx8gsnee"]
+[gd_scene load_steps=23 format=4 uid="uid://cx782kx8gsnee"]
 
 [ext_resource type="Script" uid="uid://54dse3g7cffp" path="res://scene/script/level2/game_2.gd" id="1_1t5ki"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="2_mabcy"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c580sqtamtoor" path="res://scene/pause_menu.tscn" id="9_opq00"]
 [ext_resource type="Theme" uid="uid://c78fh6kcfwmct" path="res://style/pause5.tres" id="10_8hjmp"]
 [ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="11_s6gob"]
+[ext_resource type="PackedScene" uid="uid://cxrrbiyu75ym1" path="res://scene/left_border.tscn" id="12_7cqvu"]
+[ext_resource type="PackedScene" uid="uid://ck6p7knm8pa4x" path="res://scene/right_border.tscn" id="13_6ys5s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sepx6"]
 texture = ExtResource("2_mabcy")
@@ -9914,9 +9916,18 @@ offset_bottom = -426.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ea6d5")
 
 [node name="Transitiondoor" parent="." instance=ExtResource("11_s6gob")]
+visible = false
 position = Vector2(-100, -200)
 scale = Vector2(0.6351, 0.5298)
+
+[node name="left border" parent="." instance=ExtResource("12_7cqvu")]
+position = Vector2(-684, -25)
+
+[node name="right_border" parent="." instance=ExtResource("13_6ys5s")]
+position = Vector2(481, -26)
 
 [connection signal="body_entered" from="Area2D" to="TileMapLayer2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="TileMapLayer2" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
+[connection signal="body_entered" from="left border" to="left border" method="_on_body_entered"]
+[connection signal="body_entered" from="right_border" to="right_border" method="_on_body_entered"]

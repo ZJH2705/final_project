@@ -1,3 +1,6 @@
+Timer
+CollisionShape2D
+Area2D
 AnimationPlayer
 Label
 CanvasLayer
@@ -9,6 +12,3 @@ Control
 ColorRect
 VBoxContainer
 AudioStreamPlayer2D
-AnimatedSprite2D
-TileMap
-Sprite2D

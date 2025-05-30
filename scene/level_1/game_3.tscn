@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://xwwbaahgkrif"]
+[gd_scene load_steps=27 format=4 uid="uid://xwwbaahgkrif"]
 
 [ext_resource type="Script" uid="uid://bjs8tulum11jt" path="res://scene/script/level1/game_3.gd" id="1_i1r26"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="2_jkdsu"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://847on4jke4qp" path="res://scene/kill_zone.tscn" id="8_2tcpb"]
 [ext_resource type="PackedScene" uid="uid://cm4mt5e2p7rdt" path="res://scene/door.tscn" id="9_0skbd"]
 [ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="12_2cfgk"]
+[ext_resource type="PackedScene" uid="uid://cxrrbiyu75ym1" path="res://scene/left_border.tscn" id="14_rrcm0"]
+[ext_resource type="PackedScene" uid="uid://ck6p7knm8pa4x" path="res://scene/right_border.tscn" id="15_0jjpt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ri2hx"]
 texture = ExtResource("2_jkdsu")
@@ -9973,4 +9975,12 @@ scale = Vector2(0.6505, 0.526425)
 
 [node name="Pause_menu" parent="UILayer" instance=ExtResource("7_i1r26")]
 
+[node name="left border" parent="." instance=ExtResource("14_rrcm0")]
+position = Vector2(-688, -31)
+
+[node name="right_border" parent="." instance=ExtResource("15_0jjpt")]
+position = Vector2(479, -17)
+
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
+[connection signal="body_entered" from="left border" to="left border" method="_on_body_entered"]
+[connection signal="body_entered" from="right_border" to="right_border" method="_on_body_entered"]

@@ -44,8 +44,6 @@ func _on_enter() -> void:
 	pass
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
 	
 func _on_ExternalPauseButton_pressed(): 
 	pause_menu_instance.toggle_pause()

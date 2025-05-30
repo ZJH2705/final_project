@@ -1,4 +1,4 @@
-res://scene/main_menu.tscn
+res://scene/character.tscn
 res://style/default.tres
 res://style/default2.tres
 res://style/default3.tres
@@ -7,14 +7,16 @@ res://style/pause_menu.gdshader
 res://style/pause2.tres
 res://style/pause3.tres
 res://style/pause5.tres
+res://scene/script/character.gd
+res://scene/main_menu.tscn
 res://scene/level_1/game_1.tscn
 res://scene/pause_menu.tscn
 res://scene/level_1/game_2.tscn
 res://scene/level_1/game_3.tscn
 res://scene/level_2/game_1.tscn
 res://scene/level_2/game_2.tscn
-res://scene/character.tscn
 res://scene/Transitiondoor.tscn
-res://scene/script/level2/game_1.gd
-res://scene/script/level2/game_2.gd
 res://scene/game66.tscn
+res://scene/music_player.tscn
+res://scene/script/coin_dead.gd
+res://scene/script/kill_zone.gd

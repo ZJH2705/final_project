@@ -13,6 +13,7 @@ func _pass():
  is_pass = true
  anim.play("disappear")
  await anim.animation_finished
+
 func _on_death_animation_finished():
 	# 這裡可以添加重新載入場景或其他你想做的操作
  print("死亡動畫播放完畢")
@@ -25,7 +26,7 @@ func die():
  if is_dead:
   return
  is_dead = true
- 
+ $DeathSound.play()
  velocity = Vector2.ZERO
  anim.play("die")
  

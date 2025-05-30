@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://iemv8nqnd71d"]
+[gd_scene load_steps=16 format=3 uid="uid://iemv8nqnd71d"]
 
 [ext_resource type="Texture2D" uid="uid://5e6ul6dxlylb" path="res://assets/死亡動畫-20250430T034935Z-1-001/死亡動畫/pixil-frame-0 (7).png" id="1_7v2w7"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="1_x0r3k"]
 [ext_resource type="Texture2D" uid="uid://6ydu2dj4eag7" path="res://assets/死亡動畫-20250430T034935Z-1-001/死亡動畫/pixil-frame-0 (8).png" id="2_p3t0x"]
 [ext_resource type="Texture2D" uid="uid://dtwes4n8tx32g" path="res://assets/死亡動畫-20250430T034935Z-1-001/死亡動畫/pixil-frame-0 (9).png" id="3_mbevu"]
 [ext_resource type="Texture2D" uid="uid://76uj7edsbdq5" path="res://assets/死亡動畫-20250430T034935Z-1-001/死亡動畫/nothing.png" id="5_p3t0x"]
+[ext_resource type="AudioStream" uid="uid://chje1hctc8vit" path="res://assets/sounds/Debris Hits.mp3" id="6_p3t0x"]
 
 [sub_resource type="GDScript" id="GDScript_tlt3g"]
 script/source = "extends CharacterBody2D
@@ -172,3 +173,10 @@ position = Vector2(-310, 133)
 scale = Vector2(0.212389, 0.165542)
 sprite_frames = SubResource("SpriteFrames_jnn1m")
 animation = &"idle"
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("6_p3t0x")
+volume_db = -15.802
+pitch_scale = 0.72
+autoplay = true

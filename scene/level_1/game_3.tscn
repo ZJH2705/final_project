@@ -9845,7 +9845,8 @@ texture = ExtResource("4_iauom")
 region_rect = Rect2(710.031, 170, 109.969, 50)
 
 [sub_resource type="Animation" id="Animation_tmdpi"]
-length = 0.001
+length = 5.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -9856,7 +9857,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1261, -547)]
+"values": [Vector2(-509, 11)]
 }
 
 [sub_resource type="Animation" id="Animation_f3uhq"]
@@ -9873,7 +9874,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1261, -547), Vector2(-481, -548)]
+"values": [Vector2(-509, 11), Vector2(281, 11)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p34k1"]
@@ -9906,7 +9907,7 @@ tile_map_data = PackedByteArray("AAD7//z/AQAZABYAAAD7//3/AQAZABYAAAD7//7/AQAZABY
 tile_set = SubResource("TileSet_1x5d1")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_ds0ap")]
-position = Vector2(-362, -83)
+position = Vector2(-672, 50)
 
 [node name="coin dead" parent="." instance=ExtResource("7_0jjpt")]
 position = Vector2(-18, -21)
@@ -9932,7 +9933,7 @@ offset_bottom = -426.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_5voc6")
 
 [node name="platform" parent="." instance=ExtResource("6_83e16")]
-position = Vector2(-1261, -547)
+position = Vector2(-509, 11)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platform"]
 root_node = NodePath("../../TileMapLayer")

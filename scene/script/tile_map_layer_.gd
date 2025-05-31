@@ -1,7 +1,7 @@
 extends TileMapLayer
 
 @export var player_name: String = "CharacterBody2D"
-@export var erase_width: int = 8  # 可透過 Inspector 調整消除寬度
+@export var erase_width: int = 3  # 可透過 Inspector 調整消除寬度
 
 func _on_area_2d_body_entered(body: Node) -> void:
 	if body.name != player_name:
@@ -11,7 +11,7 @@ func _on_area_2d_body_entered(body: Node) -> void:
 	var player_tile = local_to_map(body.global_position)
 	
 	# 設定消除起始位置 (玩家右側第一格)
-	var start_x = player_tile.x -15
+	var start_x = player_tile.x +1
 	
 	# 取得地圖有效範圍
 	var used_rect = get_used_rect()

@@ -9871,7 +9871,7 @@ tile_set = SubResource("TileSet_1x5d1")
 position = Vector2(-214, 92)
 
 [node name="door" parent="." instance=ExtResource("8_ihhsk")]
-position = Vector2(444, 38)
+position = Vector2(460, 37)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
@@ -9879,7 +9879,7 @@ position = Vector2(444, 38)
 visible = false
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("11_xttwy")]
-position = Vector2(-363, -82)
+position = Vector2(-667, 50)
 
 [node name="Pause" type="Button" parent="."]
 offset_left = -639.0

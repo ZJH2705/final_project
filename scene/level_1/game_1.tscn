@@ -9891,7 +9891,7 @@ position = Vector2(-110, 304)
 position = Vector2(411, 38)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("9_3dq6l")]
-position = Vector2(-349, -82)
+position = Vector2(-669, 49)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 3
@@ -9913,7 +9913,8 @@ offset_bottom = -426.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_lhdpo")
 
 [node name="Transitiondoor" parent="." instance=ExtResource("12_136rn")]
-position = Vector2(-100, -200)
+visible = false
+position = Vector2(-104, -187)
 scale = Vector2(0.651, 0.532)
 
 [node name="left border" parent="." instance=ExtResource("13_tmkai")]

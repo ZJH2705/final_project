@@ -165,14 +165,14 @@ animations = [{
 script = SubResource("GDScript_tlt3g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-310.25, 133.242)
 shape = SubResource("RectangleShape2D_k8rrn")
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-310, 133)
 scale = Vector2(0.212389, 0.165542)
 sprite_frames = SubResource("SpriteFrames_jnn1m")
 animation = &"idle"
+metadata/_edit_lock_ = true
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 process_mode = 3

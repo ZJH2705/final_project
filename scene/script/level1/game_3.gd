@@ -43,7 +43,7 @@ func _on_enter() -> void:
 	GameState.current_level = 2
 	GameState.current_game = 1
 	GameState.max_unlocked_level = max(GameState.max_unlocked_level, 2)
-	get_tree().change_scene_to_file("res://scene/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scene/level_1/game_4.tscn")
 
 	pass
 

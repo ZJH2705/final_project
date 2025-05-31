@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://xwwbaahgkrif"]
+[gd_scene load_steps=26 format=4 uid="uid://xwwbaahgkrif"]
 
 [ext_resource type="Script" uid="uid://bjs8tulum11jt" path="res://scene/script/level1/game_3.gd" id="1_i1r26"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="2_jkdsu"]
@@ -7,7 +7,6 @@
 [ext_resource type="Theme" uid="uid://c78fh6kcfwmct" path="res://style/pause5.tres" id="5_8k3nk"]
 [ext_resource type="PackedScene" uid="uid://iemv8nqnd71d" path="res://scene/character.tscn" id="5_ds0ap"]
 [ext_resource type="PackedScene" uid="uid://c672cktomv05m" path="res://scene/platform.tscn" id="6_83e16"]
-[ext_resource type="PackedScene" uid="uid://duxf8eyov0vlo" path="res://scene/coin.tscn" id="6_rrcm0"]
 [ext_resource type="PackedScene" uid="uid://hyn84pvnm8lw" path="res://scene/coin_dead.tscn" id="7_0jjpt"]
 [ext_resource type="PackedScene" uid="uid://c580sqtamtoor" path="res://scene/pause_menu.tscn" id="7_i1r26"]
 [ext_resource type="PackedScene" uid="uid://847on4jke4qp" path="res://scene/kill_zone.tscn" id="8_2tcpb"]
@@ -9909,32 +9908,8 @@ tile_set = SubResource("TileSet_1x5d1")
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_ds0ap")]
 position = Vector2(-362, -83)
 
-[node name="coin" parent="." instance=ExtResource("6_rrcm0")]
-position = Vector2(-45, 22)
-
-[node name="coin2" parent="." instance=ExtResource("6_rrcm0")]
-position = Vector2(9, 23)
-
-[node name="coin3" parent="." instance=ExtResource("6_rrcm0")]
-position = Vector2(-174, 53)
-
-[node name="coin5" parent="." instance=ExtResource("6_rrcm0")]
-position = Vector2(-98, 21)
-
-[node name="coin8" parent="." instance=ExtResource("6_rrcm0")]
-position = Vector2(70, 22)
-
-[node name="coin7" parent="." instance=ExtResource("6_rrcm0")]
-position = Vector2(98, 22)
-
-[node name="coin6" parent="." instance=ExtResource("6_rrcm0")]
-position = Vector2(-71, 22)
-
 [node name="coin dead" parent="." instance=ExtResource("7_0jjpt")]
 position = Vector2(-18, -21)
-
-[node name="coin dead2" parent="." instance=ExtResource("7_0jjpt")]
-position = Vector2(39, 22)
 
 [node name="kill zone" parent="." instance=ExtResource("8_2tcpb")]
 position = Vector2(-227, 89)
@@ -9974,6 +9949,7 @@ scale = Vector2(0.6505, 0.526425)
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_menu" parent="UILayer" instance=ExtResource("7_i1r26")]
+visible = false
 
 [node name="left border" parent="." instance=ExtResource("14_rrcm0")]
 position = Vector2(-688, -31)

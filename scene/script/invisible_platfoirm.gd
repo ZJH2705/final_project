@@ -9,3 +9,8 @@ func _ready() -> void:
 func _on_trigger_entered(body: Node) -> void:
 	if body is CharacterBody2D:  # 確認是角色碰到
 		visible = true           # 顯示平台
+
+
+
+
+	

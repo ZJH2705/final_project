@@ -1,9 +1,10 @@
+res://scene/level_1
+res://assets/sprites
 <<<<<<< HEAD
 res://scene/script
 res://scene
 res://scene/level_2
 =======
-res://assets/scene
 >>>>>>> 8fc3aded22a7e86c789871dc908a05b82f4dfc4c
 res://
 <<<<<<< HEAD
@@ -14,4 +15,3 @@ res://assets/死亡動畫-20250430T034935Z-1-001/死亡動畫
 res://assets/門-20250430T034938Z-1-001/門
 res://assets/設定頁面
 res://assets
-res://assets/sprites

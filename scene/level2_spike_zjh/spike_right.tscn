@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://cu8yqff0eh5d8"]
+
+[ext_resource type="Script" uid="uid://bqh08uhp1ohcv" path="res://scene/script/level2_zjh/spike_right.gd" id="1_rsnrn"]
+[ext_resource type="Texture2D" uid="uid://qrb07tys4ucb" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/尖刺3-1.png" id="1_tew6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xanym"]
+size = Vector2(48, 16)
+
+[sub_resource type="Animation" id="Animation_vi0yg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 31)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 25)]
+}
+
+[sub_resource type="Animation" id="Animation_gg8oe"]
+resource_name = "spike_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 30), Vector2(93, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 31), Vector2(93, 31)]
+}
+
+[sub_resource type="Animation" id="Animation_xanym"]
+resource_name = "spike_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 31), Vector2(0, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 30), Vector2(0, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_rsnrn"]
+resource_name = "spike_lift"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vi0yg"]
+_data = {
+&"RESET": SubResource("Animation_vi0yg"),
+&"spike_lift": SubResource("Animation_rsnrn"),
+&"spike_right": SubResource("Animation_gg8oe"),
+&"spike_up": SubResource("Animation_xanym")
+}
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(32, 0)
+script = ExtResource("1_rsnrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 31)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_xanym")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../spike")
+libraries = {
+&"": SubResource("AnimationLibrary_vi0yg")
+}
+
+[node name="spike" type="Sprite2D" parent="."]
+position = Vector2(0, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_tew6u")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -11,8 +11,8 @@ extends Node2D
 #@onready var player = get_node("CharacterBody2D") # 角色
 
 func _ready() -> void:
-	GameState.current_level = 1
-	GameState.current_game = 3
+	GameState.current_level = 6
+	GameState.current_game = 1
 	#GameState.save_progress()
 	
 	if not Transition.has_played_intro:
@@ -35,15 +35,9 @@ func _on_enter() -> void:
 	Transitiondoor.play("doorclose")
 	await Transitiondoor.animation_finished
 	Transition.has_played_intro = false
-	GameState.current_game = 1
+	GameState.current_game += 1
 	GameState.level_game_progress[GameState.current_level] = GameState.current_game
-	#轉場景
-	if GameState.max_unlocked_level < 2:
-		GameState.max_unlocked_level = 2
-	GameState.current_level = 2
-	GameState.current_game = 1
-	GameState.max_unlocked_level = max(GameState.max_unlocked_level, 2)
-	get_tree().change_scene_to_file("res://scene/level2_spike_zjh/spike2-1.tscn")
+	get_tree().change_scene_to_file("res://scene/level_6/game_1.tscn")
 
 	pass
 

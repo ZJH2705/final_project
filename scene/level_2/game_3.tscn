@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://ck6p7knm8pa4x" path="res://scene/right_border.tscn" id="13_kvodc"]
 [ext_resource type="Script" uid="uid://dmq5wu5lhr2ed" path="res://scene/script/spike.gd" id="14_k07ss"]
 [ext_resource type="Texture2D" uid="uid://qrb07tys4ucb" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/尖刺3-1.png" id="15_6gij2"]
-[ext_resource type="PackedScene" uid="uid://cu8yqff0eh5d8" path="res://scene/level_2/spike_right.tscn" id="16_04k1x"]
-[ext_resource type="PackedScene" uid="uid://b4twgyimmi1ts" path="res://scene/level2_spike_zjh/spike_left.tscn" id="17_1xewc"]
+[ext_resource type="PackedScene" uid="uid://cu8yqff0eh5d8" path="res://scene/spike_right.tscn" id="16_04k1x"]
+[ext_resource type="PackedScene" uid="uid://b4twgyimmi1ts" path="res://scene/spike_left.tscn" id="17_1xewc"]
 [ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="18_rkxk5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]

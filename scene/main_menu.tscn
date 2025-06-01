@@ -100,7 +100,43 @@ offset_top = 349.0
 offset_right = 827.0
 offset_bottom = 389.0
 
+[node name="PLAY3" type="Button" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -3.143
+offset_right = 5.0
+offset_bottom = 26.857
+theme = ExtResource("3_sepwh")
+
+[node name="PLAY4" type="Button" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 96.45
+offset_right = 5.0
+offset_bottom = 126.45
+theme = ExtResource("3_sepwh")
+
+[node name="PLAY5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 101.821
+offset_top = 96.45
+offset_right = 116.821
+offset_bottom = 126.45
+theme = ExtResource("3_sepwh")
+
+[node name="PLAY6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 214.328
+offset_top = 96.45
+offset_right = 229.328
+offset_bottom = 126.45
+theme = ExtResource("3_sepwh")
+
 [connection signal="pressed" from="PLAY1" to="." method="_on_play_1_pressed"]
 [connection signal="pressed" from="OPTION" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="PLAY2" to="." method="_on_play_2_pressed"]
+[connection signal="pressed" from="PLAY3" to="." method="_on_play_3_pressed"]
+[connection signal="pressed" from="PLAY4" to="." method="_on_play_4_pressed"]
+[connection signal="pressed" from="PLAY5" to="." method="_on_play_5_pressed"]
+[connection signal="pressed" from="PLAY6" to="." method="_on_play_6_pressed"]

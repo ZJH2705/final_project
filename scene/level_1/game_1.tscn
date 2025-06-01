@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=4 uid="uid://cx782kx8gsnee"]
 
-[ext_resource type="Script" uid="uid://nlt0ipeyodtm" path="res://scene/script/level1/game_1.gd" id="1_ji5k0"]
+[ext_resource type="Script" uid="uid://nlt0ipeyodtm" path="res://scene/script/level7/game_1.gd" id="1_ji5k0"]
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="2_ji5k0"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="3_0dk2f"]
 [ext_resource type="Script" uid="uid://cry82lccbbcsd" path="res://scene/script/tile_map_layer_.gd" id="4_0dk2f"]

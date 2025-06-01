@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://qrb07tys4ucb" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/尖刺3-1.png" id="15_ki2ah"]
 [ext_resource type="PackedScene" uid="uid://cxrrbiyu75ym1" path="res://scene/left_border.tscn" id="15_m0tx1"]
 [ext_resource type="PackedScene" uid="uid://ck6p7knm8pa4x" path="res://scene/right_border.tscn" id="16_nhksg"]
-[ext_resource type="PackedScene" uid="uid://cu8yqff0eh5d8" path="res://scene/level_2/spike_right.tscn" id="17_u4jeu"]
+[ext_resource type="PackedScene" uid="uid://cu8yqff0eh5d8" path="res://scene/spike_right.tscn" id="17_u4jeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
 texture = ExtResource("3_m0tx1")

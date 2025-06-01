@@ -61,11 +61,23 @@ func update_level_buttons() -> void:
 	# Hide all buttons by default
 	$PLAY1.visible = false
 	$PLAY2.visible = false
+	$PLAY3.visible = false
+	$PLAY4.visible = false
+	$PLAY5.visible = false
+	$PLAY6.visible = false
 
 	if GameState.current_level == 1:
 		$PLAY1.visible = true
 	elif GameState.current_level == 2 and GameState.max_unlocked_level >= 2:
 		$PLAY2.visible = true
+	elif GameState.current_level == 3 and GameState.max_unlocked_level >= 3:
+		$PLAY3.visible = true
+	elif GameState.current_level == 4 and GameState.max_unlocked_level >= 4:
+		$PLAY4.visible = true
+	elif GameState.current_level == 5 and GameState.max_unlocked_level >= 5:
+		$PLAY5.visible = true
+	elif GameState.current_level == 6 and GameState.max_unlocked_level >= 6:
+		$PLAY6.visible = true
 
 func update_death_display():
 	var number_str = str(GameState.death_count)
@@ -82,3 +94,35 @@ func update_death_display():
 		tex_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		tex_rect.custom_minimum_size = Vector2(32, 32)  # Set the size of each digit
 		container.add_child(tex_rect)
+
+
+func _on_play_3_pressed() -> void:
+	var level = GameState.current_level
+	GameState.current_game = GameState.level_game_progress[level]
+	var game = GameState.current_game
+	var scene_path := "res://scene/level_3/game_%d.tscn" % [game]
+	get_tree().change_scene_to_file(scene_path)
+
+
+func _on_play_4_pressed() -> void:
+	var level = GameState.current_level
+	GameState.current_game = GameState.level_game_progress[level]
+	var game = GameState.current_game
+	var scene_path := "res://scene/level_4/game_%d.tscn" % [game]
+	get_tree().change_scene_to_file(scene_path)
+
+
+func _on_play_5_pressed() -> void:
+	var level = GameState.current_level
+	GameState.current_game = GameState.level_game_progress[level]
+	var game = GameState.current_game
+	var scene_path := "res://scene/level_5/game_%d.tscn" % [game]
+	get_tree().change_scene_to_file(scene_path)
+
+
+func _on_play_6_pressed() -> void:
+	var level = GameState.current_level
+	GameState.current_game = GameState.level_game_progress[level]
+	var game = GameState.current_game
+	var scene_path := "res://scene/level_6/game_%d.tscn" % [game]
+	get_tree().change_scene_to_file(scene_path)

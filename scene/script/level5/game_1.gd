@@ -12,7 +12,7 @@ extends Node2D
 #@onready var player = get_node("CharacterBody2D") # 角色
 
 func _ready() -> void:
-	GameState.current_level = 1
+	GameState.current_level = 5
 	GameState.current_game = 1
 #	GameState.save_progress()
 
@@ -41,7 +41,7 @@ func _on_enter() -> void:
 	#轉場景
 	GameState.current_game += 1
 	GameState.level_game_progress[GameState.current_level] = GameState.current_game
-	get_tree().change_scene_to_file("res://scene/level_1/game_2.tscn")
+	get_tree().change_scene_to_file("res://scene/level_5/game_2.tscn")
 
 	pass
 	

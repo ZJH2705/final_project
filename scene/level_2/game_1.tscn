@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ck6p7knm8pa4x" path="res://scene/right_border.tscn" id="13_6ys5s"]
 [ext_resource type="Script" uid="uid://dmq5wu5lhr2ed" path="res://scene/script/spike.gd" id="14_8hjmp"]
 [ext_resource type="Texture2D" uid="uid://qrb07tys4ucb" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/尖刺3-1.png" id="15_s6gob"]
-[ext_resource type="PackedScene" uid="uid://csmix1dqe7xlv" path="res://scene/level_2/spike_up.tscn" id="16_o7hb2"]
+[ext_resource type="PackedScene" uid="uid://csmix1dqe7xlv" path="res://scene/spike_up.tscn" id="16_o7hb2"]
 [ext_resource type="Script" uid="uid://bu22f213u3qme" path="res://scene/script/spike_up.gd" id="17_p8x2l"]
 [ext_resource type="Texture2D" uid="uid://dejosm612apek" path="res://assets/暫停/pixil-frame-0 (21).png" id="18_tktff"]
 

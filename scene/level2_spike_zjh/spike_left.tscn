@@ -1,33 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://csmix1dqe7xlv"]
+[gd_scene load_steps=9 format=3 uid="uid://b4twgyimmi1ts"]
 
-[ext_resource type="Texture2D" uid="uid://qrb07tys4ucb" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/尖刺3-1.png" id="1_xanym"]
-
-[sub_resource type="GDScript" id="GDScript_xanym"]
-script/source = "extends Area2D
-
-signal die
-
-@onready var timer: Timer = $Timer
-var has_triggered = false
-
-func _on_body_entered(body: Node2D) -> void:
-	if has_triggered:
-		return
-
-	if body is CharacterBody2D:
-		has_triggered = true
-		print(\"你已經死了\")
-
-		var player = body as CharacterBody2D
-		player.die() #呼叫自己死亡
-		GameState.death_count+=1
-		print(\"hello\")
-		await player.anim.animation_finished
-		timer.start()
-func _on_timer_timeout() -> void:
-	get_tree().reload_current_scene()
-	emit_signal(\"die\")
-"
+[ext_resource type="Script" uid="uid://cr7xtxs15hngy" path="res://scene/script/level2_zjh/spike_left.gd" id="1_b7re1"]
+[ext_resource type="Texture2D" uid="uid://qrb07tys4ucb" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/尖刺3-1.png" id="2_xhwob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xanym"]
 size = Vector2(48, 16)
@@ -57,6 +31,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 25)]
+}
+
+[sub_resource type="Animation" id="Animation_rsnrn"]
+resource_name = "spike_lift"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 30), Vector2(-93, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 31), Vector2(-93, 31)]
 }
 
 [sub_resource type="Animation" id="Animation_gg8oe"]
@@ -113,33 +114,6 @@ tracks/1/keys = {
 "values": [Vector2(0, 30), Vector2(0, -1)]
 }
 
-[sub_resource type="Animation" id="Animation_rsnrn"]
-resource_name = "spike_lift"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 30), Vector2(-93, 30)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 31), Vector2(-93, 31)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vi0yg"]
 _data = {
 &"RESET": SubResource("Animation_vi0yg"),
@@ -150,7 +124,7 @@ _data = {
 
 [node name="Area2D" type="Area2D"]
 position = Vector2(32, 0)
-script = SubResource("GDScript_xanym")
+script = ExtResource("1_b7re1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 31)
@@ -166,7 +140,7 @@ libraries = {
 [node name="spike" type="Sprite2D" parent="."]
 position = Vector2(0, 25)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_xanym")
+texture = ExtResource("2_xhwob")
 
 [node name="Timer" type="Timer" parent="."]
 

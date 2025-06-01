@@ -1,6 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://das65ivymq5ik"]
+[gd_scene load_steps=32 format=4 uid="uid://das65ivymq5ik"]
 
-[ext_resource type="Script" uid="uid://clkdsmswngme2" path="res://scene/script/level2/game_1.gd" id="1_yxtnl"]
+[ext_resource type="Script" uid="uid://c3y5pt51mwbyf" path="res://scene/script/level5/game_6.gd" id="1_yxtnl"]
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="2_uwyi2"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="3_45xpv"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="4_kk3yk"]
@@ -9852,6 +9852,33 @@ normal = Vector2(-1, 0)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qt8qc"]
 texture = ExtResource("18_yv0y5")
 
+[sub_resource type="GDScript" id="GDScript_yxtnl"]
+resource_name = "障礙物"
+script/source = "extends AnimatableBody2D
+
+@onready var trigger_area = $Area2D
+var should_move = false  # 控制是否要移動
+
+func _ready() -> void:
+	visible = false
+	trigger_area.body_entered.connect(_on_trigger_entered)
+
+func _on_trigger_entered(body: Node) -> void:
+	if body is CharacterBody2D:
+		visible = true
+		should_move = true  # 開始移動
+
+func _process(delta):
+	if should_move:
+		position.x -= 500 * delta  # 每秒向左移動 100 像素
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwyi2"]
+size = Vector2(36, 37)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_45xpv"]
+normal = Vector2(-1, 0)
+
 [node name="game" type="Node2D"]
 script = ExtResource("1_yxtnl")
 
@@ -9948,16 +9975,39 @@ script = ExtResource("17_nhvrv")
 [node name="Timer2" type="Timer" parent="spike_hide"]
 
 [node name="judge" type="Area2D" parent="."]
+position = Vector2(-173, 52)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="judge"]
-position = Vector2(-176, 54)
 shape = SubResource("WorldBoundaryShape2D_ep0sv")
+metadata/_edit_lock_ = true
 
 [node name="Panel2" type="Panel" parent="."]
 offset_left = -200.0
 offset_top = -530.0
 offset_bottom = -430.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_qt8qc")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(54, 46)
+script = SubResource("GDScript_yxtnl")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+scale = Vector2(2.35714, 2.91667)
+texture = ExtResource("2_uwyi2")
+region_enabled = true
+region_rect = Rect2(65.1855, 224.306, 14.2285, 12.7385)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_uwyi2")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
+position = Vector2(-100, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
+shape = SubResource("WorldBoundaryShape2D_45xpv")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
 [connection signal="body_entered" from="left border" to="left border" method="_on_body_entered"]

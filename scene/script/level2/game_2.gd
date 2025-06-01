@@ -37,7 +37,7 @@ func _on_enter() -> void:
 	Transition.has_played_intro = false
 	GameState.current_game += 1
 	GameState.level_game_progress[GameState.current_level] = GameState.current_game
-	get_tree().change_scene_to_file("res://scene/level_2/game_2.tscn")
+	get_tree().change_scene_to_file("res://scene/level_2/game_3.tscn")
 
 	pass
 

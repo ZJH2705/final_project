@@ -13,7 +13,7 @@ var is_triggered = false
 
 
 # 這是觸發區域的訊號，角色進入後播放尖刺動畫
-func _on_judge_body_entered(body: Node2D) -> void:
+func _on_judge_2_body_entered(body: Node2D) -> void:
 	if body.name == "CharacterBody2D" and not is_triggered:
 		is_triggered = true
 		# 播放尖刺冒出動畫
@@ -23,7 +23,7 @@ func start_spike():
 	sprite.visible = true
 	# 這裡可以先把 sprite.position.y 設為地底位置
 	sprite.position.y = 45
-	animation_player.play("spike_right")
+	animation_player.play("spike_lift")
 
 # 這是尖刺本身的碰撞訊號，只在尖刺冒出時才會觸發
 func _on_body_entered(body: Node2D) -> void:

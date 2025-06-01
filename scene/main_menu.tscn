@@ -87,10 +87,18 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_2atga")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
 offset_left = 752.0
 offset_top = 360.0
 offset_right = 792.0
 offset_bottom = 383.0
+
+[node name="DeathCounterDisplay" type="HFlowContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(80, 40)
+offset_left = 747.0
+offset_top = 349.0
+offset_right = 827.0
+offset_bottom = 389.0
 
 [connection signal="pressed" from="PLAY1" to="." method="_on_play_1_pressed"]
 [connection signal="pressed" from="OPTION" to="." method="_on_option_pressed"]

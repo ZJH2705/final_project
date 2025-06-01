@@ -22,11 +22,22 @@ func _process(delta: float) -> void:
 		if GameState.current_level < GameState.max_unlocked_level:
 			GameState.current_level += 1
 			update_level_buttons()
+	
+	if Input.is_action_just_pressed("ui_down"):
+		if GameState.current_level < GameState.max_unlocked_level:
+			GameState.current_level += 1
+			update_level_buttons()
 
 	if Input.is_action_just_pressed("ui_left"):
 		if GameState.current_level > 1:
 			GameState.current_level -= 1
 			update_level_buttons()
+	
+	if Input.is_action_just_pressed("ui_up"):
+		if GameState.current_level > 1:
+			GameState.current_level -= 1
+			update_level_buttons()
+	
 	#pass
 
 

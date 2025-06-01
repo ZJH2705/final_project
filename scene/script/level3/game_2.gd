@@ -11,7 +11,7 @@ extends Node2D
 #@onready var player = get_node("CharacterBody2D") # 角色
 
 func _ready() -> void:
-	GameState.current_level = 2
+	GameState.current_level = 3
 	GameState.current_game = 2
 	#GameState.save_progress()
 	

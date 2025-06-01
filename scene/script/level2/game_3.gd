@@ -38,8 +38,8 @@ func _on_enter() -> void:
 	GameState.current_game = 1
 	GameState.level_game_progress[GameState.current_level] = GameState.current_game
 	#轉場景
-	if GameState.max_unlocked_level < 2:
-		GameState.max_unlocked_level = 2
+	if GameState.max_unlocked_level < 3:
+		GameState.max_unlocked_level = 3
 	GameState.current_level = 3
 	GameState.current_game = 1
 	GameState.max_unlocked_level = max(GameState.max_unlocked_level, 3)

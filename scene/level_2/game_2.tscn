@@ -9953,7 +9953,6 @@ metadata/_edit_lock_ = true
 position = Vector2(202, 23)
 
 [node name="Transitiondoor" parent="." instance=ExtResource("12_kewfm")]
-visible = false
 position = Vector2(-100, -200)
 scale = Vector2(0.651, 0.532)
 

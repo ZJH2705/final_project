@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bvs6u5xasp1bw"]
+[gd_scene load_steps=31 format=4 uid="uid://bvs6u5xasp1bw"]
 
 [ext_resource type="Script" uid="uid://54dse3g7cffp" path="res://scene/script/level7/game_5.gd" id="1_ovdx2"]
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="2_3ah60"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cxrrbiyu75ym1" path="res://scene/left_border.tscn" id="13_vnian"]
 [ext_resource type="PackedScene" uid="uid://ck6p7knm8pa4x" path="res://scene/right_border.tscn" id="14_7wtpw"]
 [ext_resource type="Script" uid="uid://d3r0hcgn837lc" path="res://scene/script/detect.gd" id="16_1tyq6"]
+[ext_resource type="Texture2D" uid="uid://dejosm612apek" path="res://assets/暫停/pixil-frame-0 (21).png" id="17_1b7yx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4tkn"]
 texture = ExtResource("3_ovdx2")
@@ -9887,6 +9888,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5av1x"]
 size = Vector2(23, 23)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fh0t7"]
+texture = ExtResource("17_1b7yx")
+
 [node name="game" type="Node2D"]
 script = ExtResource("1_ovdx2")
 
@@ -9971,6 +9975,12 @@ script = ExtResource("16_1tyq6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area2d"]
 shape = SubResource("RectangleShape2D_5av1x")
 metadata/_edit_lock_ = true
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = -200.0
+offset_top = -530.0
+offset_bottom = -430.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fh0t7")
 
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
 [connection signal="body_entered" from="left border" to="right_border" method="_on_body_entered"]

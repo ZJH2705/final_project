@@ -9919,15 +9919,15 @@ position = Vector2(-684, -25)
 [node name="right_border" parent="." instance=ExtResource("14_t7hjq")]
 position = Vector2(481, -26)
 
-[node name="Transitiondoor" parent="." instance=ExtResource("12_136rn")]
-position = Vector2(-101.5, -189.563)
-scale = Vector2(0.6555, 0.5465)
-
 [node name="Panel3" type="Panel" parent="."]
 offset_left = -200.0
 offset_top = -530.0
 offset_bottom = -430.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_qv2mk")
+
+[node name="Transitiondoor" parent="." instance=ExtResource("12_136rn")]
+position = Vector2(-101.5, -189.563)
+scale = Vector2(0.6555, 0.5465)
 
 [connection signal="body_entered" from="Area2D" to="TileMapLayer2" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

@@ -12,7 +12,7 @@ extends Node2D
 
 func _ready() -> void:
 	GameState.current_level = 2
-	GameState.current_game = 2
+	GameState.current_game = 3
 	#GameState.save_progress()
 	
 	if not Transition.has_played_intro:
@@ -35,9 +35,15 @@ func _on_enter() -> void:
 	Transitiondoor.play("doorclose")
 	await Transitiondoor.animation_finished
 	Transition.has_played_intro = false
-	GameState.current_game += 1
+	GameState.current_game = 1
 	GameState.level_game_progress[GameState.current_level] = GameState.current_game
-	get_tree().change_scene_to_file("res://scene/level_2/game_3.tscn")
+	#轉場景
+	if GameState.max_unlocked_level < 2:
+		GameState.max_unlocked_level = 2
+	GameState.current_level = 3
+	GameState.current_game = 1
+	GameState.max_unlocked_level = max(GameState.max_unlocked_level, 3)
+	get_tree().change_scene_to_file("res://scene/main_menu.tscn")
 
 	pass
 

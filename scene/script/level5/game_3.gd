@@ -11,8 +11,8 @@ extends Node2D
 #@onready var player = get_node("CharacterBody2D") # 角色
 
 func _ready() -> void:
-	GameState.current_level = 2
-	GameState.current_game = 2
+	GameState.current_level = 1
+	GameState.current_game = 3
 	#GameState.save_progress()
 	
 	if not Transition.has_played_intro:
@@ -26,26 +26,30 @@ func _ready() -> void:
 		pause_menu_instance.connect("menu_closed", _on_pause_menu_closed) # <--- ADD THIS LINE
 	#else:
 		#print("Error: PauseMenu instance not found in _ready!")
-		
+	
 	Door.connect("enter" , Callable(self , "_on_enter"))  # 終點門信號連結
 	#trapcoin.connect("die" , Callable(self , "_on_die")) # 陷阱信號連結
 	pass
-	
+
 func _on_enter() -> void:
 	Transitiondoor.play("doorclose")
 	await Transitiondoor.animation_finished
 	Transition.has_played_intro = false
-	#轉場景
-	GameState.current_game += 1
+	GameState.current_game = 1
 	GameState.level_game_progress[GameState.current_level] = GameState.current_game
-	get_tree().change_scene_to_file("res://scene/level2_spike_zjh/spike2-1.tscn")
+	#轉場景
+	if GameState.max_unlocked_level < 2:
+		GameState.max_unlocked_level = 2
+	GameState.current_level = 2
+	GameState.current_game = 1
+	GameState.max_unlocked_level = max(GameState.max_unlocked_level, 2)
+	get_tree().change_scene_to_file("res://scene/level_1/game_4.tscn")
 
 	pass
-	
+
 func _on_ExternalPauseButton_pressed(): 
 	pause_menu_instance.toggle_pause()
 	
-
 
 func _on_pause_pressed() -> void:
 	if pause_menu_instance: # Make sure the instance exists

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cu8yqff0eh5d8"]
 
-[ext_resource type="Script" uid="uid://bqh08uhp1ohcv" path="res://scene/script/level2_zjh/spike_right.gd" id="1_rsnrn"]
+[ext_resource type="Script" uid="uid://bqh08uhp1ohcv" path="res://scene/script/spike_right.gd" id="1_rsnrn"]
 [ext_resource type="Texture2D" uid="uid://qrb07tys4ucb" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/尖刺3-1.png" id="1_tew6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xanym"]

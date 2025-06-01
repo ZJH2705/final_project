@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://b2ok8mtpokt5r"]
+[gd_scene load_steps=29 format=4 uid="uid://b2ok8mtpokt5r"]
 
 [ext_resource type="Script" uid="uid://clkdsmswngme2" path="res://scene/script/spike_2_1.gd" id="1_ep0sv"]
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="2_ddtaa"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ck6p7knm8pa4x" path="res://scene/right_border.tscn" id="14_8ewqf"]
 [ext_resource type="PackedScene" uid="uid://csmix1dqe7xlv" path="res://scene/level2_spike_zjh/spike_up.tscn" id="14_ep0sv"]
 [ext_resource type="Script" uid="uid://bu22f213u3qme" path="res://scene/script/level2_zjh/spike_up.gd" id="16_ep0sv"]
+[ext_resource type="Texture2D" uid="uid://dejosm612apek" path="res://assets/暫停/pixil-frame-0 (21).png" id="18_i0ghk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwcet"]
 texture = ExtResource("2_ddtaa")
@@ -9848,6 +9849,9 @@ size = Vector2(92, 26)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ep0sv"]
 normal = Vector2(-1, 0)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qt8qc"]
+texture = ExtResource("18_i0ghk")
+
 [node name="game" type="Node2D"]
 script = ExtResource("1_ep0sv")
 
@@ -9948,6 +9952,12 @@ script = ExtResource("16_ep0sv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="judge"]
 position = Vector2(-176, 54)
 shape = SubResource("WorldBoundaryShape2D_ep0sv")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = -200.0
+offset_top = -530.0
+offset_bottom = -430.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_qt8qc")
 
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
 [connection signal="body_entered" from="left border" to="left border" method="_on_body_entered"]

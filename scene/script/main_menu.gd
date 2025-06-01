@@ -7,6 +7,7 @@ func _ready() -> void:
 	#await get_tree().process_frame
 	#update_death_label()
 	update_level_buttons()
+	update_death_display()
 	pass
 
 
@@ -14,7 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$"CanvasLayer/Label".text = "%d" % GameState.death_count
+	#$"CanvasLayer/Label".text = "%d" % GameState.death_count
 	
 	
 	if Input.is_action_just_pressed("ui_right"):
@@ -66,4 +67,18 @@ func update_level_buttons() -> void:
 	elif GameState.current_level == 2 and GameState.max_unlocked_level >= 2:
 		$PLAY2.visible = true
 
+func update_death_display():
+	var number_str = str(GameState.death_count)
+	var container = $CanvasLayer/DeathCounterDisplay
 	
+	for child in container.get_children():
+		child.queue_free()
+	
+	for char in number_str:
+		var digit = int(char)
+		var tex_rect = TextureRect.new()
+		tex_rect.texture = load("res://assets/numbers/%d.png" % digit)
+		tex_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		tex_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		tex_rect.custom_minimum_size = Vector2(32, 32)  # Set the size of each digit
+		container.add_child(tex_rect)

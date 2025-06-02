@@ -1,9 +1,9 @@
 extends Node
 
-var current_level := 5
-var current_game := 3
+var current_level := 1
+var current_game := 1
 var death_count := 0
-var max_unlocked_level := 5
+var max_unlocked_level := 1
 
 
 var level_game_progress := {

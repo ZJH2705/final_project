@@ -10014,7 +10014,6 @@ offset_bottom = -430.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_hruio")
 
 [node name="Transitiondoor" parent="." instance=ExtResource("10_n2g7r")]
-visible = false
 position = Vector2(-100, -200)
 scale = Vector2(0.651, 0.532)
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b4twgyimmi1ts"]
 
 [ext_resource type="Script" uid="uid://cr7xtxs15hngy" path="res://scene/script/spike_left.gd" id="1_b7re1"]
-[ext_resource type="Texture2D" uid="uid://qrb07tys4ucb" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/尖刺3-1.png" id="2_xhwob"]
+[ext_resource type="Texture2D" uid="uid://cihcttqdgnhur" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/pixil-frame-0 (28).png" id="2_27ol4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xanym"]
 size = Vector2(48, 16)
@@ -140,7 +140,7 @@ libraries = {
 [node name="spike" type="Sprite2D" parent="."]
 position = Vector2(0, 25)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_xhwob")
+texture = ExtResource("2_27ol4")
 
 [node name="Timer" type="Timer" parent="."]
 

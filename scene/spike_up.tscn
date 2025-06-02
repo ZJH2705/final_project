@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://csmix1dqe7xlv"]
 
-[ext_resource type="Texture2D" uid="uid://qrb07tys4ucb" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/尖刺3-1.png" id="1_xanym"]
+[ext_resource type="Texture2D" uid="uid://cihcttqdgnhur" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/pixil-frame-0 (28).png" id="1_3a7ls"]
 
 [sub_resource type="GDScript" id="GDScript_xanym"]
 script/source = "extends Area2D
@@ -166,7 +166,7 @@ libraries = {
 [node name="spike" type="Sprite2D" parent="."]
 position = Vector2(0, 25)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_xanym")
+texture = ExtResource("1_3a7ls")
 
 [node name="Timer" type="Timer" parent="."]
 

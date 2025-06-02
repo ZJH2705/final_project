@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://b2ok8mtpokt5r"]
+[gd_scene load_steps=28 format=4 uid="uid://b2ok8mtpokt5r"]
 
 [ext_resource type="Script" uid="uid://clkdsmswngme2" path="res://scene/script/level2/game_1.gd" id="1_mb1gs"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="2_mabcy"]
@@ -7,14 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://847on4jke4qp" path="res://scene/kill_zone.tscn" id="6_615ry"]
 [ext_resource type="PackedScene" uid="uid://cm4mt5e2p7rdt" path="res://scene/door.tscn" id="7_bb4fc"]
 [ext_resource type="PackedScene" uid="uid://iemv8nqnd71d" path="res://scene/character.tscn" id="8_mb1gs"]
-[ext_resource type="Script" uid="uid://c07futc5cjkoc" path="res://scene/script/character.gd" id="8_opq00"]
 [ext_resource type="PackedScene" uid="uid://c580sqtamtoor" path="res://scene/pause_menu.tscn" id="9_opq00"]
 [ext_resource type="Theme" uid="uid://c78fh6kcfwmct" path="res://style/pause5.tres" id="10_8hjmp"]
 [ext_resource type="PackedScene" uid="uid://btxobaq142ak5" path="res://scene/Transitiondoor.tscn" id="11_s6gob"]
 [ext_resource type="PackedScene" uid="uid://cxrrbiyu75ym1" path="res://scene/left_border.tscn" id="12_7cqvu"]
 [ext_resource type="PackedScene" uid="uid://ck6p7knm8pa4x" path="res://scene/right_border.tscn" id="13_6ys5s"]
+[ext_resource type="Texture2D" uid="uid://cihcttqdgnhur" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/pixil-frame-0 (28).png" id="13_bb4fc"]
 [ext_resource type="Script" uid="uid://dmq5wu5lhr2ed" path="res://scene/script/spike.gd" id="14_8hjmp"]
-[ext_resource type="Texture2D" uid="uid://qrb07tys4ucb" path="res://assets/地圖物品-20250430T034931Z-1-001/地圖物品/尖刺3-1.png" id="15_s6gob"]
 [ext_resource type="PackedScene" uid="uid://csmix1dqe7xlv" path="res://scene/spike_up.tscn" id="16_o7hb2"]
 [ext_resource type="Script" uid="uid://bu22f213u3qme" path="res://scene/script/spike_up.gd" id="17_p8x2l"]
 [ext_resource type="Texture2D" uid="uid://dejosm612apek" path="res://assets/暫停/pixil-frame-0 (21).png" id="18_tktff"]
@@ -9877,14 +9876,12 @@ position = Vector2(-110, 304)
 position = Vector2(453, 38)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("8_mb1gs")]
-position = Vector2(-655, 51)
-script = ExtResource("8_opq00")
+position = Vector2(-642, 51)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 3
 
 [node name="Pause_menu" parent="UILayer" instance=ExtResource("9_opq00")]
-visible = false
 
 [node name="Pause" type="Button" parent="."]
 offset_left = -639.0
@@ -9912,7 +9909,7 @@ script = ExtResource("14_8hjmp")
 
 [node name="Sprite2D" type="Sprite2D" parent="spike"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_s6gob")
+texture = ExtResource("13_bb4fc")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spike"]
@@ -9927,7 +9924,7 @@ script = ExtResource("14_8hjmp")
 
 [node name="Sprite2D" type="Sprite2D" parent="spike2"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_s6gob")
+texture = ExtResource("13_bb4fc")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spike2"]

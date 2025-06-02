@@ -9900,12 +9900,11 @@ shape = SubResource("WorldBoundaryShape2D_f6io4")
 metadata/_edit_lock_ = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("8_0tbk5")]
-position = Vector2(-672, 52)
+position = Vector2(-642, 52)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_menu" parent="UILayer" instance=ExtResource("9_03kvv")]
-visible = false
 offset_left = 4.0
 offset_right = 4.0
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=4 uid="uid://bvs6u5xasp1bw"]
 
-[ext_resource type="Script" uid="uid://54dse3g7cffp" path="res://scene/script/level7/game_5.gd" id="1_ovdx2"]
+[ext_resource type="Script" uid="uid://h6l6k6ilkhv" path="res://scene/script/level5/game_1.gd" id="1_ovdx2"]
 [ext_resource type="Texture2D" uid="uid://drd515cgp3if" path="res://assets/sprites/world_tileset.png" id="2_3ah60"]
 [ext_resource type="Texture2D" uid="uid://bat78kb5syh54" path="res://assets/背景.png" id="3_ovdx2"]
 [ext_resource type="Texture2D" uid="uid://cg4try6t3lsxa" path="res://assets/基本元素.png" id="4_1b7yx"]
@@ -9885,8 +9885,8 @@ _data = {
 &"new_animation": SubResource("Animation_mmwkr")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5av1x"]
-size = Vector2(23, 23)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1b7yx"]
+normal = Vector2(-0.999998, -0.00187956)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fh0t7"]
 texture = ExtResource("17_1b7yx")
@@ -9930,7 +9930,7 @@ position = Vector2(452.289, 37.2289)
 visible = false
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("9_hfyw5")]
-position = Vector2(-673.08, 51.1)
+position = Vector2(-642, 51.1)
 
 [node name="Pause" type="Button" parent="."]
 offset_left = -639.0
@@ -9945,11 +9945,6 @@ offset_top = -446.0
 offset_right = -597.0
 offset_bottom = -426.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_m71ce")
-
-[node name="Transitiondoor" parent="." instance=ExtResource("12_jlgeq")]
-visible = false
-position = Vector2(-100, -200)
-scale = Vector2(0.656, 0.529)
 
 [node name="platform" parent="." instance=ExtResource("12_1b7yx")]
 position = Vector2(-102.108, 11.0692)
@@ -9973,7 +9968,7 @@ position = Vector2(-216.92, -298.904)
 script = ExtResource("16_1tyq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area2d"]
-shape = SubResource("RectangleShape2D_5av1x")
+shape = SubResource("WorldBoundaryShape2D_1b7yx")
 metadata/_edit_lock_ = true
 
 [node name="Panel3" type="Panel" parent="."]
@@ -9981,6 +9976,10 @@ offset_left = -200.0
 offset_top = -530.0
 offset_bottom = -430.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_fh0t7")
+
+[node name="Transitiondoor" parent="." instance=ExtResource("12_jlgeq")]
+position = Vector2(-100, -200)
+scale = Vector2(0.656, 0.529)
 
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
 [connection signal="body_entered" from="left border" to="right_border" method="_on_body_entered"]

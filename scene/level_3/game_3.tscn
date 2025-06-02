@@ -9883,7 +9883,7 @@ position = Vector2(-400, 152)
 position = Vector2(432, 38)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("8_5v1x3")]
-position = Vector2(-672, 52)
+position = Vector2(-642, 52)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
@@ -9965,7 +9965,6 @@ position = Vector2(-24, 96)
 scale = Vector2(23.16, 3.2)
 
 [node name="Transitiondoor" parent="." instance=ExtResource("14_ax1ru")]
-visible = false
 position = Vector2(-102, -195.75)
 scale = Vector2(0.649, 0.5484)
 

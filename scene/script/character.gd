@@ -5,36 +5,31 @@ const JUMP_VELOCITY = -500.0
 const GRAVITY = 1200.0  
 var is_dead: bool = false
 var is_pass: bool = false
-#func _ready():
- #var door = get_node_or_null("/root/YourScene/Door")  # 改成實際門的路徑
- #if door:
-  #door.connect("player_entered_door", Callable(self, "_on_player_entered_door"))
+func _ready():
+ var door = get_node_or_null("/root/YourScene/Door")  # 改成實際門的路徑
+ if door:
+  door.connect("player_entered_door", Callable(self, "_on_player_entered_door"))
 func _pass():
  is_pass = true
  anim.play("disappear")
  await anim.animation_finished
-
 func _on_death_animation_finished():
 	# 這裡可以添加重新載入場景或其他你想做的操作
  print("死亡動畫播放完畢")
- 
 	# 如果你想重新載入場景，可以在這裡加上
  get_tree().reload_current_scene()
-
 func die():
 	
  if is_dead:
   return
  is_dead = true
- $DeathSound.play()
  velocity = Vector2.ZERO
  anim.play("die")
- 
+ $DeathSound.play()
  await anim.animation_finished
  print("check")
  
- #_on_death_animation_finished()  # 動畫結束後執行後續操作
- 
+ _on_death_animation_finished()  # 動畫結束後執行後續操作
  return
 func _physics_process(delta: float) -> void:
  # 加重力
@@ -66,5 +61,5 @@ func _physics_process(delta: float) -> void:
   #print("check22")
  else:
   anim.play("run")   # 左右移動時播
- if is_dead:
-  return
+ #if is_dead:
+  #return
